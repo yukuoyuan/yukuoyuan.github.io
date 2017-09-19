@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Boy Y">
 <meta property="og:description" content="Kotlin语法 从第一篇文章中我们已经大概了解了如何创建一个kontlin语言的项目,或者如何从java转换为kotlin,本篇博客,将从最初的kotlin和java的却别慢慢学习kotlin语法. 代码的区别kotlin代码 123456789101112131415161718192021222324252627282930package cn.yky.koyunimport android">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T01:51:02.000Z">
+<meta property="og:updated_time" content="2017-09-19T08:27:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin进阶(一)">
 <meta name="twitter:description" content="Kotlin语法 从第一篇文章中我们已经大概了解了如何创建一个kontlin语言的项目,或者如何从java转换为kotlin,本篇博客,将从最初的kotlin和java的却别慢慢学习kotlin语法. 代码的区别kotlin代码 123456789101112131415161718192021222324252627282930package cn.yky.koyunimport android">
@@ -321,6 +321,25 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fun testfor(s: String)</div></pre></td></tr></table></figure>
 <p>其中参数部分转换也比较大,但是也很好理解,那就是参数s继承于String类型</p>
 <h3 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h3><p>我们通过代码对比,有没有惊奇的发现没有’;’了,麻麻再也不用担心写代码忘记’;’了.</p>
+<h3 id="值和变量"><a href="#值和变量" class="headerlink" title="值和变量"></a>值和变量</h3><p>变量的话用”var”定义,如果说是常量的话用”val”进行定义,用法如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">val price = 100 //整型,可以编译</div><div class="line">price = 30;     //不可以编译,因为已经用val定义过它是个常量</div><div class="line">var name = &quot;are you ok&quot; //字符串,可以编译</div><div class="line">name = &quot;詹姆斯&quot; //字符串,可以编译,因为他是被定义为var的变量</div><div class="line">name=123 //不可以编译,因为开始的时候已经把它定义为一个字符串了</div><div class="line">var total=price*3   //整型,计算得出常量</div></pre></td></tr></table></figure>
+<blockquote>
+<p>以上我们理解了 “val”和”var”的区别了吗,不理解的可以多敲代码,写示例!!!或者留言给我思密达</p>
+</blockquote>
+<p>你也可以直接指定常量或者变量的类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">val name :String =&quot;yukoyun&quot;</div><div class="line">var size : Double = 15.0</div><div class="line">var time : Float = 22f</div></pre></td></tr></table></figure>
+<blockquote>
+<p>发现了一个其他的事情没有哈,我们没有使用”double”,而是使用了”Double”,这是因为在Kotlin中,一切都是对象,为了实现性能,编译器会将一些对象转换为内部的原始类型</p>
+</blockquote>
+<h3 id="属性或者一些字段的获取"><a href="#属性或者一些字段的获取" class="headerlink" title="属性或者一些字段的获取"></a>属性或者一些字段的获取</h3><blockquote>
+<p>在kotlin中,你可以获取一些属性像java一样,例如,获取资源文件的字符串</p>
+</blockquote>
+<h4 id="kotlin代码-1"><a href="#kotlin代码-1" class="headerlink" title="kotlin代码"></a>kotlin代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">resources.getString(R.string.abc_capital_off);</div></pre></td></tr></table></figure>
+<h4 id="java代码-1"><a href="#java代码-1" class="headerlink" title="java代码"></a>java代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getResources().getString(R.string.app_name);</div></pre></td></tr></table></figure>
+<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>Kotlin最好的一件事就是,一切不能为空,除非你声明为空.通过使用’?’来实现.通过’?’来标识你的值可能存在,也有可能不存在.</p>
+<h4 id="看下代码示例"><a href="#看下代码示例" class="headerlink" title="看下代码示例"></a>看下代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var t: String = null //不能编译通过</div><div class="line">var i: Int   //不用做初始化.</div><div class="line">var b: String? = null //这是可以进行编译通过的</div></pre></td></tr></table></figure>
+<h3 id="更安全的调用"><a href="#更安全的调用" class="headerlink" title="更安全的调用"></a>更安全的调用</h3><p>用一个空的对象调用它的方法,是很容易出现空指针异常的.那么我们也可以通过’?’来避免这个问题的存在</p>
+<h4 id="看下代码示例-1"><a href="#看下代码示例-1" class="headerlink" title="看下代码示例"></a>看下代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">val context : Context? = null</div><div class="line">val res = context?.getResources() // 不会crash,但是res的结果是null</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -533,7 +552,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kotlin语法"><span class="nav-number">1.</span> <span class="nav-text">Kotlin语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码的区别"><span class="nav-number">1.1.</span> <span class="nav-text">代码的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#kotlin代码"><span class="nav-number">1.1.1.</span> <span class="nav-text">kotlin代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java代码"><span class="nav-number">1.1.2.</span> <span class="nav-text">java代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码区别"><span class="nav-number">2.</span> <span class="nav-text">代码区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#extends和Implement"><span class="nav-number">2.1.</span> <span class="nav-text">extends和Implement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分号"><span class="nav-number">2.3.</span> <span class="nav-text">分号</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kotlin语法"><span class="nav-number">1.</span> <span class="nav-text">Kotlin语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码的区别"><span class="nav-number">1.1.</span> <span class="nav-text">代码的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#kotlin代码"><span class="nav-number">1.1.1.</span> <span class="nav-text">kotlin代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java代码"><span class="nav-number">1.1.2.</span> <span class="nav-text">java代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码区别"><span class="nav-number">2.</span> <span class="nav-text">代码区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#extends和Implement"><span class="nav-number">2.1.</span> <span class="nav-text">extends和Implement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分号"><span class="nav-number">2.3.</span> <span class="nav-text">分号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值和变量"><span class="nav-number">2.4.</span> <span class="nav-text">值和变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性或者一些字段的获取"><span class="nav-number">2.5.</span> <span class="nav-text">属性或者一些字段的获取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#kotlin代码-1"><span class="nav-number">2.5.1.</span> <span class="nav-text">kotlin代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java代码-1"><span class="nav-number">2.5.2.</span> <span class="nav-text">java代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性"><span class="nav-number">2.6.</span> <span class="nav-text">安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#看下代码示例"><span class="nav-number">2.6.1.</span> <span class="nav-text">看下代码示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更安全的调用"><span class="nav-number">2.7.</span> <span class="nav-text">更安全的调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#看下代码示例-1"><span class="nav-number">2.7.1.</span> <span class="nav-text">看下代码示例</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
