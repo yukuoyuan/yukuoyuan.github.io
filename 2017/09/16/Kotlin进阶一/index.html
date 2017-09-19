@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Boy Y">
 <meta property="og:description" content="Kotlin语法 从第一篇文章中我们已经大概了解了如何创建一个kontlin语言的项目,或者如何从java转换为kotlin,本篇博客,将从最初的kotlin和java的却别慢慢学习kotlin语法. 代码的区别kotlin代码 123456789101112131415161718192021222324252627282930package cn.yky.koyunimport android">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T08:27:27.000Z">
+<meta property="og:updated_time" content="2017-09-19T11:36:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin进阶(一)">
 <meta name="twitter:description" content="Kotlin语法 从第一篇文章中我们已经大概了解了如何创建一个kontlin语言的项目,或者如何从java转换为kotlin,本篇博客,将从最初的kotlin和java的却别慢慢学习kotlin语法. 代码的区别kotlin代码 123456789101112131415161718192021222324252627282930package cn.yky.koyunimport android">
@@ -340,6 +340,13 @@
 <h4 id="看下代码示例"><a href="#看下代码示例" class="headerlink" title="看下代码示例"></a>看下代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var t: String = null //不能编译通过</div><div class="line">var i: Int   //不用做初始化.</div><div class="line">var b: String? = null //这是可以进行编译通过的</div></pre></td></tr></table></figure>
 <h3 id="更安全的调用"><a href="#更安全的调用" class="headerlink" title="更安全的调用"></a>更安全的调用</h3><p>用一个空的对象调用它的方法,是很容易出现空指针异常的.那么我们也可以通过’?’来避免这个问题的存在</p>
 <h4 id="看下代码示例-1"><a href="#看下代码示例-1" class="headerlink" title="看下代码示例"></a>看下代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">val context : Context? = null</div><div class="line">val res = context?.getResources() // 不会crash,但是res的结果是null</div></pre></td></tr></table></figure>
+<p>如果你想获取一个字符串的话,你会这么写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">val context : Context? = null</div><div class="line">val res = context?.getResources() </div><div class="line">val appName = res?.getString(R.string.app_name)</div><div class="line">val shortName = appName?.substring(0, 3)</div></pre></td></tr></table></figure>
+<p>但是这样我觉得,如果第一个是空的话,就没有必要走下一步了,我给出的代码例如下边的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">val context : Context? = null</div><div class="line">//这是一种java加konlin</div><div class="line">if (context != null) &#123;</div><div class="line">    val res = context.getResources()    // 这里边的就不需要写&apos;?&apos;了</div><div class="line">    val appName = res.getString(R.string.app_name)</div><div class="line">    val shortName = appName.substring(0, 2)</div><div class="line">&#125;</div><div class="line">/**</div><div class="line">*纯kotlin实现</div><div class="line">*/</div><div class="line">val context : Context? = null</div><div class="line">//一旦为null,就不需要走代码块了</div><div class="line">context?.let &#123;</div><div class="line">    val res = context.getResources()    // 这里边的就不需要写&apos;?&apos;了</div><div class="line">    val appName = res.getString(R.string.app_name)</div><div class="line">    val shortName = appName.substring(0, 2)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>更多语法可以参考kotlin的<a href="http://www.kotlindoc.cn/GettingStarted/Idioms.html" target="_blank" rel="external">中文文档</a></p>
+</blockquote>
 
       
     </div>
@@ -379,6 +386,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/19/Kotlin进阶二/" rel="prev" title="Kotlin进阶二">
+                Kotlin进阶二 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -458,7 +469,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
