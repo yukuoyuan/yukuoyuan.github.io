@@ -339,6 +339,23 @@
 <li><a href="https://yukuoyuan.github.io/archives/" target="_blank" rel="external">Github博客地址</a></li>
 <li><a href="https://github.com/yukuoyuan" target="_blank" rel="external">Github地址</a></li>
 </ul>
+<p><div id="container"></div></p>
+<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: 'yukuoyuan',
+  repo: 'yukuoyuan.github.io',
+  oauth: {
+    client_id: '305697cd991bc18f3231',
+    client_secret: '1c1040fcd1151b2eeff8287dafd6ba00378db098',
+  },
+})
+gitment.render('container')
+</script>
+
+
 
           
         

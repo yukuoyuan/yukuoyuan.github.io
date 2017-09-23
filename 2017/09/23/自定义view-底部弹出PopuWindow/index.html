@@ -104,7 +104,7 @@
 <meta property="og:description" content="从底部弹出PopuWindow在开发中是一个经常用到的问题,代码枯燥,又没有什么技术含量,我就把它封装了一下,以最简单的方式实现它.  看下效果图 实现方式基础类1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5304164-6e589e4f72190641?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-09-23T03:09:35.000Z">
+<meta property="og:updated_time" content="2017-09-23T03:11:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义view_底部弹出PopuWindow">
 <meta name="twitter:description" content="从底部弹出PopuWindow在开发中是一个经常用到的问题,代码枯燥,又没有什么技术含量,我就把它封装了一下,以最简单的方式实现它.  看下效果图 实现方式基础类1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636">
@@ -338,6 +338,23 @@
 <li><a href="https://yukuoyuan.github.io/archives/" target="_blank" rel="external">Github博客地址</a></li>
 <li><a href="https://github.com/yukuoyuan" target="_blank" rel="external">Github地址</a></li>
 </ul>
+<p><div id="container"></div></p>
+<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: 'yukuoyuan',
+  repo: 'yukuoyuan.github.io',
+  oauth: {
+    client_id: '305697cd991bc18f3231',
+    client_secret: '1c1040fcd1151b2eeff8287dafd6ba00378db098',
+  },
+})
+gitment.render('container')
+</script>
+
+
 
       
     </div>
