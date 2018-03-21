@@ -503,6 +503,17 @@
 <p>冒号后边的是临时密码</p>
 <p><img src="http://img-blog.csdn.net/20180320150440191?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L0Vhc2tTaGFyaw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="">自定义登录密码(默认密码策略validate_password要求密码至少包含一个大写字母，一个小写字母，一个数字和一个特殊字符，并且总密码长度至少为8个字符。)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;MyNewPass4!&apos;;</div></pre></td></tr></table></figure>
+<h2 id="安装mysql客户端-并远程连接调试"><a href="#安装mysql客户端-并远程连接调试" class="headerlink" title="安装mysql客户端.并远程连接调试"></a>安装mysql客户端.并远程连接调试</h2><p>我安装的是<a href="https://www.sequelpro.com/" target="_blank" rel="external">Sequel Pro</a>是一个免费的mac版本的mysql客户端</p>
+<h4 id="本地远程连接我们的服务器"><a href="#本地远程连接我们的服务器" class="headerlink" title="本地远程连接我们的服务器"></a>本地远程连接我们的服务器</h4><p>然后打开我们的命令行远程连接到我们的服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh root@119.23.203.252</div></pre></td></tr></table></figure>
+<p>后边的是我们自己买的云服务器的公网ip.回车之后输入密码就可以远程连接到我们的服务器了</p>
+<h4 id="启动我们的mysql服务"><a href="#启动我们的mysql服务" class="headerlink" title="启动我们的mysql服务"></a>启动我们的mysql服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# service mysqld start</div></pre></td></tr></table></figure>
+<h4 id="设置我们的mysql开机自启动"><a href="#设置我们的mysql开机自启动" class="headerlink" title="设置我们的mysql开机自启动"></a>设置我们的mysql开机自启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# chkconfig mysqld on</div></pre></td></tr></table></figure>
+<h4 id="登录我们mysql"><a href="#登录我们mysql" class="headerlink" title="登录我们mysql"></a>登录我们mysql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# mysql -uroot -p</div></pre></td></tr></table></figure>
+<h4 id="设置我们mysql可以在任何ip下账号密码登录"><a href="#设置我们mysql可以在任何ip下账号密码登录" class="headerlink" title="设置我们mysql可以在任何ip下账号密码登录"></a>设置我们mysql可以在任何ip下账号密码登录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;我们自己msql密码&apos; WITH GRANT OPTION;</div></pre></td></tr></table></figure>
+<h4 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
+<h4 id="在Mac上的「Sequel-pro」测试一下"><a href="#在Mac上的「Sequel-pro」测试一下" class="headerlink" title="在Mac上的「Sequel pro」测试一下"></a>在Mac上的「Sequel pro」测试一下</h4><p><img src="http://ov0vwamhh.bkt.clouddn.com/2017-12-06-Jietu20171206-195558.jpg" alt=""><br><img src="http://ov0vwamhh.bkt.clouddn.com/2017-12-06-Jietu20171206-195350.jpg" alt=""></p>
+<p>阿西吧!终于连接上了,有没有,好激动有没有</p>
 
           
         
