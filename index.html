@@ -238,6 +238,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/学习Python打卡第二天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/22/学习Python打卡第二天/" itemprop="url">学习Python打卡第二天</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T10:24:59+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>第一天学会了搭建环境,运行简单的pyhon代码.第二天我们继续深入学习</p>
+</blockquote>
+<h2 id="输入输出的代码交互"><a href="#输入输出的代码交互" class="headerlink" title="输入输出的代码交互"></a>输入输出的代码交互</h2><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>用print()在括号中加上字符串，就可以向屏幕上输出指定的文字。比如输出’hello, world’，用代码实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(&apos;helloword&apos;)</div><div class="line">helloword</div></pre></td></tr></table></figure>
+<p>print()函数也可以接受多个字符串，用逗号“,”隔开，就可以连成一串输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(&apos;I&apos;,&apos;love&apos;,&apos;you&apos;)</div><div class="line">I love you</div></pre></td></tr></table></figure>
+<p>print()会依次打印每个字符串，遇到逗号“,”会输出一个空格，因此，输出的字符串是这样拼起来的：<br><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001431643506965540b8016b45c4d27b84c734543f78840000/l" alt=""></p>
+<p>print()也可以打印整数，或者计算结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(200)</div><div class="line">200</div><div class="line">&gt;&gt;&gt; print(100+200)</div><div class="line">300</div></pre></td></tr></table></figure></p>
+<p>因此，我们可以把计算100 + 200的结果打印得更漂亮一点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(&apos;100+200=&apos;,100+200)</div><div class="line">100+200= 300</div></pre></td></tr></table></figure>
+<p>注意，对于100 + 200，Python解释器自动计算出结果300，但是，’100 + 200 =’是字符串而非数学公式，Python把它视为字符串，请自行解释上述打印结果</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>现在，你已经可以用print()输出你想要的结果了。但是，如果要让用户从电脑输入一些字符怎么办？Python提供了一个input()，可以让用户输入字符串，并存放到一个变量里。比如输入用户的名字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; name=input()</div><div class="line">yukuoyuan</div></pre></td></tr></table></figure>
+<p>当你输入name = input()并按下回车后，Python交互式命令行就在等待你的输入了。这时，你可以输入任意字符，然后按回车后完成输入。</p>
+<p>输入完成后，不会有任何提示，Python交互式命令行又回到&gt;&gt;&gt;状态了。那我们刚才输入的内容到哪去了？答案是存放到name变量里了。可以直接输入name查看变量内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; name</div><div class="line">&apos;yukuoyuan&apos;</div></pre></td></tr></table></figure>
+<p>什么是变量？请回忆初中数学所学的代数基础知识：<br>设正方形的边长为a，则正方形的面积为a x a。把边长a看做一个变量，我们就可以根据a的值计算正方形的面积，比如：<br>若a=2，则面积为a x a = 2 x 2 = 4；<br>若a=3.5，则面积为a x a = 3.5 x 3.5 = 12.25。<br>在计算机程序中，变量不仅可以为整数或浮点数，还可以是字符串，因此，name作为一个变量就是一个字符串。<br>要打印出name变量的内容，除了直接写name然后按回车外，还可以用print()函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(name)</div><div class="line">yukuoyuan</div></pre></td></tr></table></figure>
+<p>有了输入和输出，我们就可以把上次打印’hello, world’的程序改成有点意义的程序了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">name=input()</div><div class="line">print(&apos;hello&apos;,name)</div></pre></td></tr></table></figure>
+<p>运行上面的程序，第一行代码会让用户输入任意字符作为自己的名字，然后存入name变量中；第二行代码会根据用户的名字向用户说hello，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bogon:workspace yukuoyuan$ python hello.py</div><div class="line">yukuoyuan</div><div class="line">hello yukuoyuan</div></pre></td></tr></table></figure>
+<p>但是程序运行的时候，没有任何提示信息告诉用户：“嘿，赶紧输入你的名字”，这样显得很不友好。幸好，input()可以让你显示一个字符串来提示用户，于是我们把代码改成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">name=input(&apos;please enter you name:&apos;)</div><div class="line">print(&apos;hello&apos;,name)</div></pre></td></tr></table></figure>
+<p>再次运行这个程序，你会发现，程序一运行，会首先打印出please enter your name:，这样，用户就可以根据提示，输入名字后，得到hello, xxx的输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bogon:workspace yukuoyuan$ python hello.py</div><div class="line">please enter you name:yukuoyuan</div><div class="line">hello yukuoyuan</div></pre></td></tr></table></figure>
+<p>每次运行该程序，根据用户输入的不同，输出结果也会不同。<br>在命令行下，输入和输出就是这么简单。</p>
+<p>##总结<br>任何计算机程序都是为了执行一个特定的任务，有了输入，用户才能告诉计算机程序所需的信息，有了输出，程序运行后才能告诉用户任务的结果。<br>输入是Input，输出是Output，因此，我们把输入输出统称为Input/Output，或者简写为IO。<br>input()和print()是在命令行下面最基本的输入和输出，但是，用户也可以通过其他更高级的图形界面完成输入和输出，比如，在网页上的一个文本框输入自己的名字，点击“确定”后在网页上看到输出信息</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/学习Python打卡第一天/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1789,177 +1937,6 @@ gitment.render('container')
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/Kotlin进阶二/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yukuoyuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Martin Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/19/Kotlin进阶二/" itemprop="url">Kotlin进阶(二)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T19:37:04+08:00">
-                2017-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>本章会讲一些Fragment的一些扩展方法和使用</p>
-</blockquote>
-<h1 id="创建我们的NewsFragment-kt文件"><a href="#创建我们的NewsFragment-kt文件" class="headerlink" title="创建我们的NewsFragment.kt文件"></a>创建我们的NewsFragment.kt文件</h1><p>创建一个NewsFragment.kt之后,我们试着使用Recycleview.用Kotlin的形式</p>
-<figure class="highlight plain"><figcaption><span>var newsList: RecyclerView? </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@SuppressLint(&quot;NewApi&quot;)</div><div class="line">override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View &#123;</div><div class="line">    /**</div><div class="line">     * 填充一个视图</div><div class="line">     */</div><div class="line">    val view = inflater?.inflate(R.layout.fragment_news, container, false);</div><div class="line">    /**</div><div class="line">     * 获取控件</div><div class="line">     */</div><div class="line">    newsList = view.findViewById(R.id.rcv_test_fragment) as RecyclerView;</div><div class="line">    /**</div><div class="line">     * 设置控件的布局方式</div><div class="line">     */</div><div class="line">    newsList?.layoutManager = LinearLayoutManager(context);</div><div class="line">    return view!!;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="通过上边的代码我们可以学到几个东西"><a href="#通过上边的代码我们可以学到几个东西" class="headerlink" title="通过上边的代码我们可以学到几个东西"></a>通过上边的代码我们可以学到几个东西</h2><ul>
-<li>封装的方法</li>
-<li>默认的参数</li>
-<li>Android的扩展(绑定视图)</li>
-</ul>
-<h3 id="封装的方法"><a href="#封装的方法" class="headerlink" title="封装的方法"></a>封装的方法</h3><p>扩展函数允许我们通过添加新的函数来扩展一个类的功能。class不一定是我们的（可以是第三方party library），也不需要我们继承class.</p>
-<p>我们可以为现有的类添加新的函数，这就是我们现在将用ViewGroup类看到的.我们也将了解它是如何工作的以及如何从Java中使用它</p>
-<p>正如你所知，ViewGroup是Android SDK中的一个类，为了使用它，我们必须这样做<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">inflater.inflate(R.layout.news_fragment, container, false)</div></pre></td></tr></table></figure></p>
-<p>我们封装之后可以这么写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">val view = container?.inflate(R.layout.news_fragment)</div></pre></td></tr></table></figure>
-<p>那么我们是如何实现的呢?<br>首先我们创建一个Extensions.kt文件.代码如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fun ViewGroup.inflate(layoutId: Int): View &#123;</div><div class="line">    return LayoutInflater.from(context).inflate(layoutId, this, false)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过上边的代码我们为ViewGroup添加了一个扩展的方法.对比一下java和kotlin的调用的区别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Java</div><div class="line">ExtensionsKt.inflate(container, R.layout.news_fragment);</div><div class="line">// Kotlin</div><div class="line">container?.inflate(R.layout.news_fragment)</div></pre></td></tr></table></figure>
-<p>我们可以很直观的看到,kotlin不需要任何的继承或者对象引用,可以直接进行使用,并且我们添加了一个?,<br>这是为了检测是否是空,避免空指针异常的抛出</p>
-<p>我们也可以给此文件的最上边添加一个声明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@file:JvmName(&quot;ExtensionsUtils&quot;)</div><div class="line">package cn.yky.koyun.common</div><div class="line"></div><div class="line">import android.view.LayoutInflater</div><div class="line">import android.view.View</div><div class="line">import android.view.ViewGroup</div><div class="line"></div><div class="line">fun ViewGroup.inflate(layoutId: Int): View &#123;</div><div class="line">    return LayoutInflater.from(context).inflate(layoutId, this, false)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这样的话我们可以通过java的形式进行调用了,代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ExtensionsUtils.inflate(container, R.layout.news_fragment);</div></pre></td></tr></table></figure></p>
-<h3 id="参数的默认值"><a href="#参数的默认值" class="headerlink" title="参数的默认值"></a>参数的默认值</h3><p>上边封装的方法,我们发现少了一个参数,就是是否添加到父布局的参数,我们加上,并设置默认值,代码如下.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View &#123;</div><div class="line">    return LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果你不指定attachToRoot参数，它将采用默认值，所以你可以用不同的方式调用它:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">container?.inflate(R.layout.news_fragment) // default: false</div><div class="line">container?.inflate(R.layout.news_fragment, true)</div></pre></td></tr></table></figure></p>
-<h2 id="Android扩展的方法"><a href="#Android扩展的方法" class="headerlink" title="Android扩展的方法"></a>Android扩展的方法</h2><p>例如 “findViewById()”,Android扩展中添加了很多方便的扩展方法,允许我们访问视图的元素，因为它是我们的Activity或Fragment中的一个属性，已经设置了正确的视图类型.</p>
-<p>在开始之前,我们先配置一下我们Android Extensions启用.改我们应用程序模块中的build.gradle文件，应用kotlin-android-extensions插件并使用gradle重新同步</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;</div><div class="line"></div><div class="line">apply plugin: &apos;kotlin-android&apos;</div><div class="line">//添加Adnroid扩展插件</div><div class="line">apply plugin: &apos;kotlin-android-extensions&apos;</div></pre></td></tr></table></figure>
-<p>准备好！让我们替换findViewById.</p>
-<p>布局代码</p>
-<figure class="highlight plain"><figcaption><span>version</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;&gt;</div><div class="line"></div><div class="line">    &lt;android.support.v7.widget.RecyclerView</div><div class="line">        android:id=&quot;@+id/news_list&quot;</div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;match_parent&quot; /&gt;</div><div class="line">&lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
-<p>NewsFragment.kt代码为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">import kotlinx.android.synthetic.main.fragment_news.*</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by yukuoyuan on 2017/9/20.</div><div class="line"> */</div><div class="line">class NewsFragment : Fragment() &#123;</div><div class="line"></div><div class="line">    @SuppressLint(&quot;NewApi&quot;)</div><div class="line">    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View &#123;</div><div class="line">        /**</div><div class="line">         * 填充一个视图</div><div class="line">         */</div><div class="line">        val view = container?.inflate(R.layout.fragment_news);</div><div class="line">        /**</div><div class="line">         * 设置控件的布局方式</div><div class="line">         */</div><div class="line">        news_list.layoutManager = LinearLayoutManager(context);</div><div class="line">        return view!!;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上边的代码中,<strong>我们移除了成员变量,移除了findviewbyid()(总共两行代码)</strong>;直接用id的形式进行引用,并且我们发现多了一个导入,并且也没有”?”,那是因为它是一个不能为空的属性.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import kotlinx.android.synthetic.main.fragment_news.*</div></pre></td></tr></table></figure>
-<p><div id="container"></div></p>
-<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
-  owner: 'yukuoyuan',
-  repo: 'yukuoyuan.github.io',
-  oauth: {
-    client_id: '305697cd991bc18f3231',
-    client_secret: '1c1040fcd1151b2eeff8287dafd6ba00378db098',
-  },
-})
-gitment.render('container')
-</script>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2013,7 +1990,7 @@ gitment.render('container')
             
               <a href="/archives">
             
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
