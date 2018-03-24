@@ -310,7 +310,7 @@
         
           
             <blockquote>
-<p>今天学习Python的一些基础,例如集合,基础类型等</p>
+<p>今天学习Python的一些基础,数据类型和和变量</p>
 </blockquote>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>Python的语法比较简单，采用缩进方式，写出来的代码就像下面的样子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># print absolute value of an integer:</div><div class="line">a = 100</div><div class="line">if a &gt;= 0:</div><div class="line">    print(a)</div><div class="line">else:</div><div class="line">    print(-a)</div></pre></td></tr></table></figure>
@@ -328,6 +328,52 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;I\&apos;m \&quot;OK\&quot;!&apos;</div></pre></td></tr></table></figure>
 <p>表示的字符串内容是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">I&apos;m &quot;OK&quot;!</div></pre></td></tr></table></figure>
+<p>转义字符\可以转义很多字符，比如\n表示换行，\t表示制表符，字符\本身也要转义，所以\表示的字符就是\，可以在Python的交互式命令行用print()打印字符串看看：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(&apos;I\&apos;am ok.&apos;)</div><div class="line">I&apos;am ok.</div><div class="line">&gt;&gt;&gt; print(&apos;i\&apos;am learning\nPython&apos;)</div><div class="line">i&apos;am learning</div><div class="line">Python</div><div class="line">&gt;&gt;&gt; print(&apos;\\\n\\&apos;)</div><div class="line">\</div><div class="line">\</div></pre></td></tr></table></figure>
+<p>如果字符串里面有很多字符都需要转义，就需要加很多\，为了简化，Python还允许用r’’表示’’内部的字符串默认不转义，可以自己试试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print(&apos;\\\t\\&apos;)</div><div class="line">\	\</div><div class="line">&gt;&gt;&gt; print(r&apos;\\\t\\&apos;)</div><div class="line">\\\t\\</div></pre></td></tr></table></figure>
+<h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4><p>布尔值和布尔代数的表示完全一致，一个布尔值只有True、False两种值，要么是True，要么是False，在Python中，可以直接用True、False表示布尔值（请注意大小写），也可以通过布尔运算计算出来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; True</div><div class="line">True</div><div class="line">&gt;&gt;&gt; False</div><div class="line">False</div><div class="line">&gt;&gt;&gt; 3&gt;2</div><div class="line">True</div><div class="line">&gt;&gt;&gt; 3&gt;6</div><div class="line">False</div></pre></td></tr></table></figure>
+<p>布尔值可以用and.or和not运算</p>
+<p>and运算是与运算，只有所有都为True，and运算结果才是True：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; True and True</div><div class="line">True</div><div class="line">&gt;&gt;&gt; True and False</div><div class="line">False</div><div class="line">&gt;&gt;&gt; False and False</div><div class="line">False</div><div class="line">&gt;&gt;&gt; 5&gt;3 and 3&gt;2</div><div class="line">True</div></pre></td></tr></table></figure></p>
+<p>or运算是或运算，只要其中有一个为True，or运算结果就是True：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; True or True</div><div class="line">True</div><div class="line">&gt;&gt;&gt; True or False</div><div class="line">True</div><div class="line">&gt;&gt;&gt; False or False</div><div class="line">False</div><div class="line">&gt;&gt;&gt; 5&gt;3 or 3&gt;6</div><div class="line">True</div></pre></td></tr></table></figure>
+<p>not运算是非运算，它是一个单目运算符，把True变成False，False变成True：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; not True</div><div class="line">False</div><div class="line">&gt;&gt;&gt; not False</div><div class="line">True</div><div class="line">&gt;&gt;&gt; not 3&gt;2</div><div class="line">False</div></pre></td></tr></table></figure>
+<p>布尔值经常用在条件判断中，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">age=36</div><div class="line">if age&gt;=60:</div><div class="line">	print(&apos;老人&apos;)</div><div class="line">elif age&gt;=20:</div><div class="line">	print(&apos;年轻人&apos;)</div><div class="line">else:</div><div class="line">	print(&apos;小孩&apos;)</div></pre></td></tr></table></figure>
+<h4 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h4><p>空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。</p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>变量的概念基本上和初中代数的方程变量是一致的，只是在计算机程序中，变量不仅可以是数字，还可以是任意数据类型。<br>变量在程序中就是用一个变量名表示了，变量名必须是大小写英文、数字和_的组合，且不能用数字开头，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a=1</div></pre></td></tr></table></figure>
+<p>变量a是一个整数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">b_123=&apos;你好&apos;</div></pre></td></tr></table></figure>
+<p>变量b_123是一个字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">IsImportant=True</div></pre></td></tr></table></figure>
+<p>变量IsImportant是一个布尔值True。</p>
+<p>在Python中，等号=是赋值语句，可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a=1#a是证书</div><div class="line">a=&apos;你好&apos;#a是字符串</div><div class="line">a=True#a是布尔值</div></pre></td></tr></table></figure>
+<p>这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。例如Java是静态语言，赋值语句如下（）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int a=1#a是证书</div><div class="line">a=&apos;你好&apos;#报错,不能把字符串赋值给整数变量</div></pre></td></tr></table></figure>
+<p>和静态语言相比，动态语言更灵活，就是这个原因。<br>请不要把赋值语句的等号等同于数学的等号。比如下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a=10</div><div class="line">a=a+2</div></pre></td></tr></table></figure>
+<p>如果从数学上理解x = x + 2那无论如何是不成立的，在程序中，赋值语句先计算右侧的表达式x + 2，得到结果12，再赋给变量x。由于x之前的值是10，重新赋值后，x的值变成12。<br>最后，理解变量在计算机内存中的表示也非常重要。当我们写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = &apos;ABC</div></pre></td></tr></table></figure>
+<p>Python解释器干了两件事情：</p>
+<ul>
+<li>在内存中创建了一个’ABC’的字符串；</li>
+<li>在内存中创建了一个名为a的变量，并把它指向’ABC’<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4>所谓常量就是不能变的变量，比如常用的数学常数π就是一个常量。在Python中，通常用全部大写的变量名表示常量：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PI = 3.14159265359</div></pre></td></tr></table></figure>
+<p>但事实上PI仍然是一个变量，Python根本没有任何机制保证PI不会被改变，所以，用全部大写的变量名表示常量只是一个习惯上的用法，如果你一定要改变变量PI的值，也没人能拦住你。<br>最后解释一下整数的除法为什么也是精确的。在Python中，有两种除法，一种除法是/：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 10/3</div><div class="line">3.3333333333333335</div></pre></td></tr></table></figure>
+<p>/除法计算结果是浮点数，即使是两个整数恰好整除，结果也是浮点数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 9/3</div><div class="line">3.0</div></pre></td></tr></table></figure>
+<p>还有一种除法是//，称为地板除，两个整数的除法仍然是整数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 10//3</div><div class="line">3</div></pre></td></tr></table></figure>
+<p>你没有看错，整数的地板除//永远是整数，即使除不尽。要做精确的除法，使用/就可以。<br>因为//除法只取结果的整数部分，所以Python还提供一个余数运算，可以得到两个整数相除的余数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 10%3</div><div class="line">1</div></pre></td></tr></table></figure>
+<p>无论整数做//除法还是取余数，结果永远是整数，所以，整数运算结果永远是精确的。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>Python支持多种数据类型，在计算机内部，可以把任何数据都看成一个“对象”，而变量就是在程序中用来指向这些数据对象的，对变量赋值就是把数据和变量给关联起来。<br>对变量赋值x = y是把变量x指向真正的对象，该对象是变量y所指向的。随后对变量y的赋值不影响变量x的指向。<br>注意：Python的整数没有大小限制，而某些语言的整数根据其存储长度是有大小限制的，例如Java对32位整数的范围限制在-2147483648-2147483647。<br>Python的浮点数也没有大小限制，但是超出一定范围就直接表示为inf（无限大）。</p>
 
           
         
