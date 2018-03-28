@@ -238,6 +238,389 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/java面试题及答案整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/28/java面试题及答案整理/" itemprop="url">java面试题及答案整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T09:05:15+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="java面试题"><a href="#java面试题" class="headerlink" title="java面试题"></a>java面试题</h1><h2 id="java基础面试知识点"><a href="#java基础面试知识点" class="headerlink" title="java基础面试知识点"></a>java基础面试知识点</h2><h3 id="java中-和equals和hashCode的区别"><a href="#java中-和equals和hashCode的区别" class="headerlink" title="java中==和equals和hashCode的区别"></a>java中==和equals和hashCode的区别</h3><ol>
+<li>基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean 他们之间的比较，应用双等号（==）,比较的是他们的值。 </li>
+<li>复合数据类型(类)<br>当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较后的结果为true，否则比较后结果为false。 JAVA当中所有的类都是继承于Object这个基类的，在Object中的基类中定义了一个equals的方法，这个方法的初始行为是比较对象的内存地 址，但在一些类库当中这个方法被覆盖掉了，<strong>如String,Integer,Date在这些类当中equals有其自身的实现，而不再是比较类在堆内存中的存放地址了</strong></li>
+</ol>
+<ul>
+<li>如果两个对象equals，Java运行时环境会认为他们的hashcode一定相等。</li>
+<li>如果两个对象不equals，他们的hashcode有可能相等。</li>
+<li>如果两个对象hashcode相等，他们不一定equals。</li>
+<li>如果两个对象hashcode不相等，他们一定不equals。</li>
+</ul>
+<h4 id="扩展equals知识"><a href="#扩展equals知识" class="headerlink" title="扩展equals知识"></a>扩展equals知识</h4><p> 对于复合数据类型之间进行equals比较，在没有覆写equals方法的情况下，他们之间的比较还是基于他们在内存中的存放位置的地址值的，因为Object的equals方法也是用双等号”==”进行比较的，所以比较后的结果跟双等号”=)=”的结果相同。</p>
+<h4 id="扩展集合知识hashmap"><a href="#扩展集合知识hashmap" class="headerlink" title="扩展集合知识hashmap"></a>扩展集合知识hashmap</h4><p>将对象放入到集合中时，首先判断要放入对象的hashcode值与集合中的任意一个元素的hashcode值是否相等，如果不相等直接将该对象放入集合中。如果hashcode值相等，然后再通过equals方法判断要放入对象与集合中的任意一个对象是否相等，如果equals判断不相等，直接将该元素放入到集合中，否则不放入。<br>回过来说get的时候，HashMap也先调key.hashCode()算出数组下标，然后看equals如果是true就是找到了，所以就涉及了equals。</p>
+<h3 id="基础类型占用字节数"><a href="#基础类型占用字节数" class="headerlink" title="基础类型占用字节数"></a>基础类型占用字节数</h3><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>字节数byte</th>
+<th>bit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byt   boolean</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr>
+<td>short  char</td>
+<td>2</td>
+<td>16</td>
+</tr>
+<tr>
+<td>int  float</td>
+<td>4</td>
+<td>32</td>
+</tr>
+<tr>
+<td>long   double</td>
+<td>8</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<h3 id="int与integer的区别"><a href="#int与integer的区别" class="headerlink" title="int与integer的区别"></a>int与integer的区别</h3><p>int 是基础类型<br>integer 是int的包装类型</p>
+<h3 id="java多态"><a href="#java多态" class="headerlink" title="java多态"></a>java多态</h3><p>多态的优点</p>
+<ul>
+<li>消除类型之间的耦合关系</li>
+<li>替换性</li>
+<li>可扩充性</li>
+<li>接口性</li>
+<li>灵活性</li>
+<li>简化性</li>
+</ul>
+<p>多态存在的三个必要条件</p>
+<ul>
+<li>继承</li>
+<li>重写</li>
+<li>父类引用指向子类对象</li>
+</ul>
+<p>多态的实现方式</p>
+<ul>
+<li>重写：</li>
+<li>接口</li>
+<li>抽象类和抽象方法</li>
+</ul>
+<h3 id="String、StringBuffer、StringBuilder区别"><a href="#String、StringBuffer、StringBuilder区别" class="headerlink" title="String、StringBuffer、StringBuilder区别"></a>String、StringBuffer、StringBuilder区别</h3><ul>
+<li>String 字符串常量</li>
+<li>StringBuffer 字符串变量（线程安全）</li>
+<li>StringBuilder 字符串变量（非线程安全）<blockquote>
+<p>如果对于字符串经常改变的情况下,String会每次创建对象,而后两个都是操作的同一个对象.因此String类型在经常操作字符串的情况下,会影响性能.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h4><p>Java.lang.StringBuffer线程安全的可变字符序列。一个类似于 String 的字符串缓冲区，但不能修改。虽然在任意时间点上它都包含某种特定的字符序列，但通过某些方法调用可以改变该序列的长度和内容。</p>
+<h4 id="StringBuilde"><a href="#StringBuilde" class="headerlink" title="StringBuilde"></a>StringBuilde</h4><p>java.lang.StringBuilder一个可变的字符序列是5.0新增的。此类提供一个与 StringBuffer 兼容的 API，但不保证同步。该类被设计用作 StringBuffer 的一个简易替换，用在字符串缓冲区被单个线程使用的时候（这种情况很普遍）。如果可能，建议优先采用该类，因为在大多数实现中，它比 StringBuffer 要快。两者的方法基本相同。</p>
+<h3 id="什么是内部类？内部类的作用"><a href="#什么是内部类？内部类的作用" class="headerlink" title="什么是内部类？内部类的作用"></a>什么是内部类？内部类的作用</h3><h4 id="为何使用内部类"><a href="#为何使用内部类" class="headerlink" title="为何使用内部类"></a>为何使用内部类</h4><ul>
+<li>内部类提供了更好的封装，只有外部类能访问内部类</li>
+<li>内部类可以独立继承一个接口，不受外部类是否继承接口影响</li>
+<li>内部类中的属性和方法即使是外部类也不能直接访问，相反内部类可以直接访问外部类的属性和方法，即使private</li>
+<li>利于回调函数的编写<h4 id="内部类和外部类的联系"><a href="#内部类和外部类的联系" class="headerlink" title="内部类和外部类的联系"></a>内部类和外部类的联系</h4></li>
+<li>内部类是一个相对独立的实体,内部类是一个编译时概念，编译后外部类及其内部类会生成两个独立的class文件.</li>
+<li>内部类可以直接访问外部类的元素，但是外部类不可以直接访问内部类的元素</li>
+<li>外部类可以通过内部类引用间接访问内部类元素</li>
+</ul>
+<h4 id="内部类的种类"><a href="#内部类的种类" class="headerlink" title="内部类的种类"></a>内部类的种类</h4><ul>
+<li>成员内部类</li>
+<li>方法内部类</li>
+<li>匿名内部类</li>
+<li>静态内部类</li>
+</ul>
+<h3 id="抽象类和接口区别"><a href="#抽象类和接口区别" class="headerlink" title="抽象类和接口区别"></a>抽象类和接口区别</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>抽象类</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有无实现的方法</td>
+<td>有</td>
+<td>全部是抽象方法</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>extends</td>
+<td>implements</td>
+</tr>
+<tr>
+<td>访问修饰符</td>
+<td>public、protected和default</td>
+<td>public</td>
+</tr>
+<tr>
+<td>多继承</td>
+<td>抽象方法可以继承一个类和实现多个接口</td>
+<td>接口只可以继承一个或多个其它接口</td>
+</tr>
+</tbody>
+</table>
+<h3 id="泛型中extends和super的区别"><a href="#泛型中extends和super的区别" class="headerlink" title="泛型中extends和super的区别"></a>泛型中extends和super的区别</h3><ul>
+<li>&lt;? extends T&gt; 该类型只能是继承T的类型 上界通配符</li>
+<li>&lt;? super T&gt; 该类型只能是T类型的父类型  下界通配符</li>
+</ul>
+<h3 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h3><ul>
+<li>进程是资源的分配和调度的一个独立单元，而线程是CPU调度的基本单元</li>
+<li>同一个进程中可以包括多个线程，并且线程共享整个进程的资源（寄存器、堆栈、上下文），一个进程至少包括一个线程。</li>
+<li>进程的创建调用fork或者vfork，而线程的创建调用pthread_create，进程结束后它拥有的所有线程都将销毁，而线程的结束不会影响同个进程中的其他线程的结束</li>
+<li>线程是轻两级的进程，它的创建和销毁所需要的时间比进程小很多，所有操作系统中的执行功能都是创建线程去完成的</li>
+<li>线程中执行时一般都要进行同步和互斥，因为他们共享同一进程的所有资源</li>
+<li>线程有自己的私有属性TCB，线程id，寄存器、硬件上下文，而进程也有自己的私有属性进程控制块PCB，这些私有属性是不被共享的，用来标示一个进程或一个线程的标志</li>
+</ul>
+<h3 id="final，finally，finalize的区别"><a href="#final，finally，finalize的区别" class="headerlink" title="final，finally，finalize的区别"></a>final，finally，finalize的区别</h3><ul>
+<li>Final用于修饰类、成员变量和成员方法。final修饰的类，不能被继承</li>
+<li>Finally通常和try catch搭配使用，保证不管有没有发生异常，资源都能够被释放（释放连接、关闭IO流）</li>
+<li>Finalize是object类中的一个方法，子类可以重写finalize()方法实现对资源的回收</li>
+</ul>
+<h3 id="Serializable-和Parcelable-的区别"><a href="#Serializable-和Parcelable-的区别" class="headerlink" title="Serializable 和Parcelable 的区别"></a>Serializable 和Parcelable 的区别</h3><ul>
+<li>Serializable Java 序列化接口 在硬盘上读写 读写过程中有大量临时变量的生成</li>
+<li>Parcelable Android 序列化接口 效率高 使用麻烦 在内存中读写</li>
+</ul>
+<h3 id="谈谈对kotlin的理解"><a href="#谈谈对kotlin的理解" class="headerlink" title="谈谈对kotlin的理解"></a>谈谈对kotlin的理解</h3><ul>
+<li>kotlin是对java的一层包装，语法接近于函数式编程，基于JVM设计,100%兼容Java,切换成本小。两种代码可并存，互相调用，互相转换</li>
+</ul>
+<h2 id="java深入面试题"><a href="#java深入面试题" class="headerlink" title="java深入面试题"></a>java深入面试题</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/学习Python打卡第四天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/24/学习Python打卡第四天/" itemprop="url">学习Python打卡第四天</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-24T09:49:33+08:00">
+                2018-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/学习Python打卡第三天/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1684,277 +2067,6 @@ gitment.render('container')
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/Toolbar使用一/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yukuoyuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Martin Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/18/Toolbar使用一/" itemprop="url">Toolbar使用一</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T14:47:31+08:00">
-                2017-12-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>很早就想使用toolbar控件来代替自己定义的一些布局,然而从业之后的公司,都希望ios和android的设计风格一致,奈何从未有幸使用,今天就先写个demo,纪念一下自己的小情怀</p>
-</blockquote>
-<h2 id="引用配置-40-project下的build-gradle-41"><a href="#引用配置-40-project下的build-gradle-41" class="headerlink" title="引用配置&#40;project下的build.gradle&#41;"></a>引用配置&#40;project下的build.gradle&#41;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile &apos;com.android.support:appcompat-v7:25.3.1&apos;</div></pre></td></tr></table></figure>
-<h2 id="布局中使用"><a href="#布局中使用" class="headerlink" title="布局中使用"></a>布局中使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v7.widget.Toolbar</div><div class="line">android:id=&quot;@+id/tb_main&quot;</div><div class="line">android:layout_width=&quot;match_parent&quot;</div><div class="line">android:layout_height=&quot;wrap_content&quot;</div><div class="line">android:background=&quot;@color/colorPrimary&quot;&gt;</div><div class="line"></div><div class="line">&lt;/android.support.v7.widget.Toolbar&gt;</div></pre></td></tr></table></figure>
-<h2 id="Activity代码块"><a href="#Activity代码块" class="headerlink" title="Activity代码块"></a>Activity代码块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">private Toolbar tbMain;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">      super.onCreate(savedInstanceState);</div><div class="line">      setContentView(R.layout.activity_main);</div><div class="line">      initView();</div><div class="line">      tbMain = (Toolbar) findViewById(R.id.tb_main);</div><div class="line">      /**</div><div class="line">       * 设置最左侧的按钮</div><div class="line">       */</div><div class="line">      tbMain.setNavigationIcon(R.mipmap.ic_launcher_round);</div><div class="line">      /**</div><div class="line">       * 设置logo</div><div class="line">       */</div><div class="line">      tbMain.setLogo(R.mipmap.ic_launcher);</div><div class="line">      /**</div><div class="line">       * 设置大标题</div><div class="line">       */</div><div class="line">      tbMain.setTitle(&quot;标题&quot;);</div><div class="line">      /**</div><div class="line">       * 设置大标题的颜色</div><div class="line">       */</div><div class="line">      tbMain.setTitleTextColor(Color.WHITE);</div><div class="line">      /**</div><div class="line">       * 设置小标题</div><div class="line">       */</div><div class="line">      tbMain.setSubtitle(&quot;小标题&quot;);</div><div class="line">      /**</div><div class="line">       * 设置小标题的颜色</div><div class="line">       */</div><div class="line">      tbMain.setSubtitleTextColor(Color.WHITE);</div><div class="line">      setSupportActionBar(tbMain);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  private void initView() &#123;</div><div class="line">      tbMain = (Toolbar) findViewById(R.id.tb_main);</div><div class="line">  &#125;</div><div class="line">/**</div><div class="line">*三个点点击之后弹出的弹窗菜单</div><div class="line">*/</div><div class="line">  @Override</div><div class="line">  public boolean onCreateOptionsMenu(Menu menu) &#123;</div><div class="line">      getMenuInflater().inflate(R.menu.menu_main, menu);</div><div class="line">      return true;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://img.blog.csdn.net/20171219092324603?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWFza1NoYXJr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="效果图"></p>
-<blockquote>
-<p>不完美的地方就是三个点的颜色是黑色的,与我们的主题格格不入,怎么办呢,修改它</p>
-<h2 id="修改toolbar的style"><a href="#修改toolbar的style" class="headerlink" title="修改toolbar的style"></a>修改toolbar的style</h2></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- ToolBar菜单样式 --&gt;</div><div class="line">  &lt;style name=&quot;ToolbarTheme&quot; parent=&quot;@style/AppTheme&quot;&gt;</div><div class="line">      &lt;item name=&quot;android:textColorSecondary&quot;&gt;@android:color/white&lt;/item&gt;</div><div class="line">  &lt;/style&gt;</div></pre></td></tr></table></figure>
-<h2 id="布局引用"><a href="#布局引用" class="headerlink" title="布局引用"></a>布局引用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v7.widget.Toolbar</div><div class="line">       android:id=&quot;@+id/tb_main&quot;</div><div class="line">       android:layout_width=&quot;match_parent&quot;</div><div class="line">       android:layout_height=&quot;wrap_content&quot;</div><div class="line">       android:background=&quot;@color/colorPrimary&quot;</div><div class="line">       app:theme=&quot;@style/ToolbarTheme&quot;&gt;</div><div class="line"></div><div class="line">   &lt;/android.support.v7.widget.Toolbar&gt;</div></pre></td></tr></table></figure>
-<h2 id="效果图-1"><a href="#效果图-1" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://img.blog.csdn.net/20171219093238752?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWFza1NoYXJr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h2 id="再看弹出的菜单的位置单的样式-遮挡了toolbar-不爽修改它"><a href="#再看弹出的菜单的位置单的样式-遮挡了toolbar-不爽修改它" class="headerlink" title="再看弹出的菜单的位置单的样式,遮挡了toolbar,不爽修改它"></a>再看弹出的菜单的位置单的样式,遮挡了toolbar,不爽修改它</h2><p><img src="http://img.blog.csdn.net/20171219093834183?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWFza1NoYXJr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h3 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;style name=&quot;ToolbarPopupTheme&quot; parent=&quot;@style/ThemeOverlay.AppCompat.Dark&quot;&gt;</div><div class="line">       &lt;!--修改弹窗的背景颜色--&gt;</div><div class="line">       &lt;item name=&quot;android:colorBackground&quot;&gt;@android:color/black&lt;/item&gt;</div><div class="line">       &lt;item name=&quot;actionOverflowMenuStyle&quot;&gt;@style/OverflowMenuStyle&lt;/item&gt;</div><div class="line">   &lt;/style&gt;</div><div class="line"></div><div class="line">   &lt;style name=&quot;OverflowMenuStyle&quot; parent=&quot;Widget.AppCompat.Light.PopupMenu.Overflow&quot;&gt;</div><div class="line">       &lt;item name=&quot;overlapAnchor&quot;&gt;false&lt;/item&gt;  &lt;!--把该属性改为false即可使menu位置位于toolbar之下--&gt;</div><div class="line">   &lt;/style&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.v7.widget.Toolbar</div><div class="line">       android:id=&quot;@+id/tb_main&quot;</div><div class="line">       android:layout_width=&quot;match_parent&quot;</div><div class="line">       android:layout_height=&quot;wrap_content&quot;</div><div class="line">       android:background=&quot;@color/colorPrimary&quot;</div><div class="line">       app:popupTheme=&quot;@style/ToolbarPopupTheme&quot;</div><div class="line">       app:theme=&quot;@style/ToolbarTheme&quot;&gt;</div><div class="line"></div><div class="line">   &lt;/android.support.v7.widget.Toolbar&gt;</div></pre></td></tr></table></figure>
-<h2 id="效果图-2"><a href="#效果图-2" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://img.blog.csdn.net/20171219094551234?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWFza1NoYXJr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h2 id="很重要的点击事件的监听"><a href="#很重要的点击事件的监听" class="headerlink" title="很重要的点击事件的监听"></a>很重要的点击事件的监听</h2><blockquote>
-<p>需要注意的是</p>
-</blockquote>
-<ul>
-<li>Activity一定要继承AppCompatActivity</li>
-<li>在menu里边一定要设置id</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">   public boolean onOptionsItemSelected(MenuItem item) &#123;</div><div class="line">       switch (item.getItemId()) &#123;</div><div class="line">        case android.R.id.home:</div><div class="line">        //最左侧的按钮的点击事件的监听</div><div class="line">			return true;</div><div class="line">           case R.id.toolbar_action1:</div><div class="line">               // do something</div><div class="line">               Toast.makeText(this, &quot;显示的菜单被点击了&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">               return true;</div><div class="line">           case R.id.toolbar_action2:</div><div class="line">               // do something</div><div class="line">               Toast.makeText(this, &quot;隐藏的菜单被点击了&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">               return true;</div><div class="line">           default:</div><div class="line">               // If we got here, the user&apos;s action was not recognized.</div><div class="line">               // Invoke the superclass to handle it.</div><div class="line">               return super.onOptionsItemSelected(item);</div><div class="line"></div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>好了,toolbar的简单使用就到此结束了,足够我们在开发中使用,后期我们会进行一些高级用法的介绍</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/如何发布新的blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yukuoyuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Martin Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/18/如何发布新的blog/" itemprop="url">如何发布新的blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T14:29:45+08:00">
-                2017-12-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="移动到blog目录"><a href="#移动到blog目录" class="headerlink" title="移动到blog目录"></a>移动到blog目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd  blog</div></pre></td></tr></table></figure>
-<h2 id="创建新的文章"><a href="#创建新的文章" class="headerlink" title="创建新的文章"></a>创建新的文章</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new blog名字</div></pre></td></tr></table></figure>
-<h2 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
-<h2 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">可以简写为</div><div class="line">hexo g</div></pre></td></tr></table></figure>
-<h2 id="快速部署文章到服务器"><a href="#快速部署文章到服务器" class="headerlink" title="快速部署文章到服务器"></a>快速部署文章到服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div><div class="line">可以简写为</div><div class="line">hexo d</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2008,7 +2120,7 @@ gitment.render('container')
             
               <a href="/archives">
             
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2021,7 +2133,7 @@ gitment.render('container')
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>

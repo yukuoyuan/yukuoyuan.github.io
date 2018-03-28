@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="java面试题java基础面试知识点java中==和equals和hashCode的区别 基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean 他们之间的比较，应用双等号（==）,比较的是他们的值。  复合数据类型(类)当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java面试题及答案整理">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/java面试题及答案整理/index.html">
+<meta property="og:site_name" content="Martin Yu">
+<meta property="og:description" content="java面试题java基础面试知识点java中==和equals和hashCode的区别 基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean 他们之间的比较，应用双等号（==）,比较的是他们的值。  复合数据类型(类)当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-28T07:17:26.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java面试题及答案整理">
+<meta name="twitter:description" content="java面试题java基础面试知识点java中==和equals和hashCode的区别 基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean 他们之间的比较，应用双等号（==）,比较的是他们的值。  复合数据类型(类)当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/java面试题及答案整理/"/>
+
+
+
+
+
+  <title>java面试题及答案整理 | Martin Yu</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Martin Yu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">yukoyun</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/java面试题及答案整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java面试题及答案整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T09:05:15+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="java面试题"><a href="#java面试题" class="headerlink" title="java面试题"></a>java面试题</h1><h2 id="java基础面试知识点"><a href="#java基础面试知识点" class="headerlink" title="java基础面试知识点"></a>java基础面试知识点</h2><h3 id="java中-和equals和hashCode的区别"><a href="#java中-和equals和hashCode的区别" class="headerlink" title="java中==和equals和hashCode的区别"></a>java中==和equals和hashCode的区别</h3><ol>
+<li>基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean 他们之间的比较，应用双等号（==）,比较的是他们的值。 </li>
+<li>复合数据类型(类)<br>当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较后的结果为true，否则比较后结果为false。 JAVA当中所有的类都是继承于Object这个基类的，在Object中的基类中定义了一个equals的方法，这个方法的初始行为是比较对象的内存地 址，但在一些类库当中这个方法被覆盖掉了，<strong>如String,Integer,Date在这些类当中equals有其自身的实现，而不再是比较类在堆内存中的存放地址了</strong></li>
+</ol>
+<ul>
+<li>如果两个对象equals，Java运行时环境会认为他们的hashcode一定相等。</li>
+<li>如果两个对象不equals，他们的hashcode有可能相等。</li>
+<li>如果两个对象hashcode相等，他们不一定equals。</li>
+<li>如果两个对象hashcode不相等，他们一定不equals。</li>
+</ul>
+<h4 id="扩展equals知识"><a href="#扩展equals知识" class="headerlink" title="扩展equals知识"></a>扩展equals知识</h4><p> 对于复合数据类型之间进行equals比较，在没有覆写equals方法的情况下，他们之间的比较还是基于他们在内存中的存放位置的地址值的，因为Object的equals方法也是用双等号”==”进行比较的，所以比较后的结果跟双等号”=)=”的结果相同。</p>
+<h4 id="扩展集合知识hashmap"><a href="#扩展集合知识hashmap" class="headerlink" title="扩展集合知识hashmap"></a>扩展集合知识hashmap</h4><p>将对象放入到集合中时，首先判断要放入对象的hashcode值与集合中的任意一个元素的hashcode值是否相等，如果不相等直接将该对象放入集合中。如果hashcode值相等，然后再通过equals方法判断要放入对象与集合中的任意一个对象是否相等，如果equals判断不相等，直接将该元素放入到集合中，否则不放入。<br>回过来说get的时候，HashMap也先调key.hashCode()算出数组下标，然后看equals如果是true就是找到了，所以就涉及了equals。</p>
+<h3 id="基础类型占用字节数"><a href="#基础类型占用字节数" class="headerlink" title="基础类型占用字节数"></a>基础类型占用字节数</h3><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>字节数byte</th>
+<th>bit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byt   boolean</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr>
+<td>short  char</td>
+<td>2</td>
+<td>16</td>
+</tr>
+<tr>
+<td>int  float</td>
+<td>4</td>
+<td>32</td>
+</tr>
+<tr>
+<td>long   double</td>
+<td>8</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<h3 id="int与integer的区别"><a href="#int与integer的区别" class="headerlink" title="int与integer的区别"></a>int与integer的区别</h3><p>int 是基础类型<br>integer 是int的包装类型</p>
+<h3 id="java多态"><a href="#java多态" class="headerlink" title="java多态"></a>java多态</h3><p>多态的优点</p>
+<ul>
+<li>消除类型之间的耦合关系</li>
+<li>替换性</li>
+<li>可扩充性</li>
+<li>接口性</li>
+<li>灵活性</li>
+<li>简化性</li>
+</ul>
+<p>多态存在的三个必要条件</p>
+<ul>
+<li>继承</li>
+<li>重写</li>
+<li>父类引用指向子类对象</li>
+</ul>
+<p>多态的实现方式</p>
+<ul>
+<li>重写：</li>
+<li>接口</li>
+<li>抽象类和抽象方法</li>
+</ul>
+<h3 id="String、StringBuffer、StringBuilder区别"><a href="#String、StringBuffer、StringBuilder区别" class="headerlink" title="String、StringBuffer、StringBuilder区别"></a>String、StringBuffer、StringBuilder区别</h3><ul>
+<li>String 字符串常量</li>
+<li>StringBuffer 字符串变量（线程安全）</li>
+<li>StringBuilder 字符串变量（非线程安全）<blockquote>
+<p>如果对于字符串经常改变的情况下,String会每次创建对象,而后两个都是操作的同一个对象.因此String类型在经常操作字符串的情况下,会影响性能.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h4><p>Java.lang.StringBuffer线程安全的可变字符序列。一个类似于 String 的字符串缓冲区，但不能修改。虽然在任意时间点上它都包含某种特定的字符序列，但通过某些方法调用可以改变该序列的长度和内容。</p>
+<h4 id="StringBuilde"><a href="#StringBuilde" class="headerlink" title="StringBuilde"></a>StringBuilde</h4><p>java.lang.StringBuilder一个可变的字符序列是5.0新增的。此类提供一个与 StringBuffer 兼容的 API，但不保证同步。该类被设计用作 StringBuffer 的一个简易替换，用在字符串缓冲区被单个线程使用的时候（这种情况很普遍）。如果可能，建议优先采用该类，因为在大多数实现中，它比 StringBuffer 要快。两者的方法基本相同。</p>
+<h3 id="什么是内部类？内部类的作用"><a href="#什么是内部类？内部类的作用" class="headerlink" title="什么是内部类？内部类的作用"></a>什么是内部类？内部类的作用</h3><h4 id="为何使用内部类"><a href="#为何使用内部类" class="headerlink" title="为何使用内部类"></a>为何使用内部类</h4><ul>
+<li>内部类提供了更好的封装，只有外部类能访问内部类</li>
+<li>内部类可以独立继承一个接口，不受外部类是否继承接口影响</li>
+<li>内部类中的属性和方法即使是外部类也不能直接访问，相反内部类可以直接访问外部类的属性和方法，即使private</li>
+<li>利于回调函数的编写<h4 id="内部类和外部类的联系"><a href="#内部类和外部类的联系" class="headerlink" title="内部类和外部类的联系"></a>内部类和外部类的联系</h4></li>
+<li>内部类是一个相对独立的实体,内部类是一个编译时概念，编译后外部类及其内部类会生成两个独立的class文件.</li>
+<li>内部类可以直接访问外部类的元素，但是外部类不可以直接访问内部类的元素</li>
+<li>外部类可以通过内部类引用间接访问内部类元素</li>
+</ul>
+<h4 id="内部类的种类"><a href="#内部类的种类" class="headerlink" title="内部类的种类"></a>内部类的种类</h4><ul>
+<li>成员内部类</li>
+<li>方法内部类</li>
+<li>匿名内部类</li>
+<li>静态内部类</li>
+</ul>
+<h3 id="抽象类和接口区别"><a href="#抽象类和接口区别" class="headerlink" title="抽象类和接口区别"></a>抽象类和接口区别</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>抽象类</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有无实现的方法</td>
+<td>有</td>
+<td>全部是抽象方法</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>extends</td>
+<td>implements</td>
+</tr>
+<tr>
+<td>访问修饰符</td>
+<td>public、protected和default</td>
+<td>public</td>
+</tr>
+<tr>
+<td>多继承</td>
+<td>抽象方法可以继承一个类和实现多个接口</td>
+<td>接口只可以继承一个或多个其它接口</td>
+</tr>
+</tbody>
+</table>
+<h3 id="泛型中extends和super的区别"><a href="#泛型中extends和super的区别" class="headerlink" title="泛型中extends和super的区别"></a>泛型中extends和super的区别</h3><ul>
+<li>&lt;? extends T&gt; 该类型只能是继承T的类型 上界通配符</li>
+<li>&lt;? super T&gt; 该类型只能是T类型的父类型  下界通配符</li>
+</ul>
+<h3 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h3><ul>
+<li>进程是资源的分配和调度的一个独立单元，而线程是CPU调度的基本单元</li>
+<li>同一个进程中可以包括多个线程，并且线程共享整个进程的资源（寄存器、堆栈、上下文），一个进程至少包括一个线程。</li>
+<li>进程的创建调用fork或者vfork，而线程的创建调用pthread_create，进程结束后它拥有的所有线程都将销毁，而线程的结束不会影响同个进程中的其他线程的结束</li>
+<li>线程是轻两级的进程，它的创建和销毁所需要的时间比进程小很多，所有操作系统中的执行功能都是创建线程去完成的</li>
+<li>线程中执行时一般都要进行同步和互斥，因为他们共享同一进程的所有资源</li>
+<li>线程有自己的私有属性TCB，线程id，寄存器、硬件上下文，而进程也有自己的私有属性进程控制块PCB，这些私有属性是不被共享的，用来标示一个进程或一个线程的标志</li>
+</ul>
+<h3 id="final，finally，finalize的区别"><a href="#final，finally，finalize的区别" class="headerlink" title="final，finally，finalize的区别"></a>final，finally，finalize的区别</h3><ul>
+<li>Final用于修饰类、成员变量和成员方法。final修饰的类，不能被继承</li>
+<li>Finally通常和try catch搭配使用，保证不管有没有发生异常，资源都能够被释放（释放连接、关闭IO流）</li>
+<li>Finalize是object类中的一个方法，子类可以重写finalize()方法实现对资源的回收</li>
+</ul>
+<h3 id="Serializable-和Parcelable-的区别"><a href="#Serializable-和Parcelable-的区别" class="headerlink" title="Serializable 和Parcelable 的区别"></a>Serializable 和Parcelable 的区别</h3><ul>
+<li>Serializable Java 序列化接口 在硬盘上读写 读写过程中有大量临时变量的生成</li>
+<li>Parcelable Android 序列化接口 效率高 使用麻烦 在内存中读写</li>
+</ul>
+<h3 id="谈谈对kotlin的理解"><a href="#谈谈对kotlin的理解" class="headerlink" title="谈谈对kotlin的理解"></a>谈谈对kotlin的理解</h3><ul>
+<li>kotlin是对java的一层包装，语法接近于函数式编程，基于JVM设计,100%兼容Java,切换成本小。两种代码可并存，互相调用，互相转换</li>
+</ul>
+<h2 id="java深入面试题"><a href="#java深入面试题" class="headerlink" title="java深入面试题"></a>java深入面试题</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/24/学习Python打卡第四天/" rel="next" title="学习Python打卡第四天">
+                <i class="fa fa-chevron-left"></i> 学习Python打卡第四天
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg"
+              alt="yukuoyuan" />
+          
+            <p class="site-author-name" itemprop="name">yukuoyuan</p>
+            <p class="site-description motion-element" itemprop="description">男人要么拎枪保家卫国,要么办公室运筹帷幄</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yukuoyuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/easkshark" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      CSDN
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" title="主题">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      主题
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3901112739/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java面试题"><span class="nav-number">1.</span> <span class="nav-text">java面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#java基础面试知识点"><span class="nav-number">1.1.</span> <span class="nav-text">java基础面试知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java中-和equals和hashCode的区别"><span class="nav-number">1.1.1.</span> <span class="nav-text">java中==和equals和hashCode的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展equals知识"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">扩展equals知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展集合知识hashmap"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">扩展集合知识hashmap</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础类型占用字节数"><span class="nav-number">1.1.2.</span> <span class="nav-text">基础类型占用字节数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#int与integer的区别"><span class="nav-number">1.1.3.</span> <span class="nav-text">int与integer的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java多态"><span class="nav-number">1.1.4.</span> <span class="nav-text">java多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String、StringBuffer、StringBuilder区别"><span class="nav-number">1.1.5.</span> <span class="nav-text">String、StringBuffer、StringBuilder区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuffer"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">StringBuffer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StringBuilde"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">StringBuilde</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是内部类？内部类的作用"><span class="nav-number">1.1.6.</span> <span class="nav-text">什么是内部类？内部类的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为何使用内部类"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">为何使用内部类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部类和外部类的联系"><span class="nav-number">1.1.6.2.</span> <span class="nav-text">内部类和外部类的联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部类的种类"><span class="nav-number">1.1.6.3.</span> <span class="nav-text">内部类的种类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类和接口区别"><span class="nav-number">1.1.7.</span> <span class="nav-text">抽象类和接口区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型中extends和super的区别"><span class="nav-number">1.1.8.</span> <span class="nav-text">泛型中extends和super的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程和线程的区别"><span class="nav-number">1.1.9.</span> <span class="nav-text">进程和线程的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final，finally，finalize的区别"><span class="nav-number">1.1.10.</span> <span class="nav-text">final，finally，finalize的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Serializable-和Parcelable-的区别"><span class="nav-number">1.1.11.</span> <span class="nav-text">Serializable 和Parcelable 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谈谈对kotlin的理解"><span class="nav-number">1.1.12.</span> <span class="nav-text">谈谈对kotlin的理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java深入面试题"><span class="nav-number">1.2.</span> <span class="nav-text">java深入面试题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yukuoyuan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
