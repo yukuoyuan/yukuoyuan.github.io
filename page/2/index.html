@@ -238,6 +238,183 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/AndroidShortcuts使用详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/AndroidShortcuts使用详解/" itemprop="url">AndroidShortcuts使用详解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T11:18:50+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>7.1的时候出现了一个长按图标出现的功能列表的效果,类似于2015年ios的3dTouch功能.奈何国产,大家懂得,到目前用了一加五才可以感受这个功能的好处.</p>
+</blockquote>
+<h1 id="效果图来了"><a href="#效果图来了" class="headerlink" title="效果图来了"></a>效果图来了</h1><p><img src="http://img.blog.csdn.net/20171219112926915?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWFza1NoYXJr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="shortcuts的介绍"><a href="#shortcuts的介绍" class="headerlink" title="shortcuts的介绍"></a>shortcuts的介绍</h1><blockquote>
+<p>其中App Shortcuts是指在桌面长按app图标而出现的快捷方式, 可以为你的app的关键功能添加更快速的入口而不用先打开app,点击快捷方式可以访问应用功能, 并且这种快捷方式也可以被拖拽到桌面单独放置, 变成单独的桌面快捷方式.</p>
+</blockquote>
+<h2 id="有两种shortcuts"><a href="#有两种shortcuts" class="headerlink" title="有两种shortcuts:"></a>有两种shortcuts:</h2><ul>
+<li>静态的: 在xml中定义, 适用于一些通用的动作.</li>
+<li>动态的: 由ShortcutManager发布, 可以根据用户的行为或者偏好添加, 可以动态更新.</li>
+</ul>
+<h2 id="数量"><a href="#数量" class="headerlink" title="数量"></a>数量</h2><p>每一个应用目前最多可以有5个shortcuts(静态 + 动态)</p>
+<h2 id="运行条件"><a href="#运行条件" class="headerlink" title="运行条件"></a>运行条件</h2><p>应用添加App Shortcuts是Android 7.1(API 25)的API, 所以只能在Android 7.1的设备上显示, 同时需要launcher支持, 比如Pixel launcher(Pixel设备的默认launcher), Now launcher(Nexus设备上的launcher)现在就支持, 其他launcher也可以提供支持.</p>
+<h1 id="静态的shortcuts的使用"><a href="#静态的shortcuts的使用" class="headerlink" title="静态的shortcuts的使用"></a>静态的shortcuts的使用</h1><h3 id="清单文件配置"><a href="#清单文件配置" class="headerlink" title="清单文件配置"></a>清单文件配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=&quot;.MainActivity&quot;&gt;</div><div class="line">           &lt;intent-filter&gt;</div><div class="line">               &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</div><div class="line"></div><div class="line">               &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</div><div class="line">           &lt;/intent-filter&gt;</div><div class="line">           &lt;!--添加支持shortcuts--&gt;</div><div class="line">           &lt;meta-data</div><div class="line">               android:name=&quot;android.app.shortcuts&quot;</div><div class="line">               android:resource=&quot;@xml/shortcuts&quot; /&gt;</div><div class="line">       &lt;/activity&gt;</div></pre></td></tr></table></figure>
+<h3 id="在res目录下添加xml文件夹-并新建文件shortcuts"><a href="#在res目录下添加xml文件夹-并新建文件shortcuts" class="headerlink" title="在res目录下添加xml文件夹,并新建文件shortcuts"></a>在res目录下添加xml文件夹,并新建文件shortcuts</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;shortcuts xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</div><div class="line">    &lt;shortcut</div><div class="line">        android:icon=&quot;@drawable/add&quot;</div><div class="line">        android:shortcutId=&quot;add_website&quot;</div><div class="line">        android:shortcutLongLabel=&quot;@string/add_new_website&quot;</div><div class="line">        android:shortcutShortLabel=&quot;@string/add_new_website_short&quot;&gt;</div><div class="line">        &lt;!--最左侧或者添加桌面后显示的图标--&gt;</div><div class="line">        &lt;!--id标识--&gt;</div><div class="line">        &lt;!--长按显示的文字--&gt;</div><div class="line">        &lt;!--添加到桌面显示的文字--&gt;</div><div class="line">        &lt;intent</div><div class="line">            android:action=&quot;cn.yky.test.ADD_WEBSITE&quot;</div><div class="line">            android:targetClass=&quot;cn.yky.test.MainActivity&quot;</div><div class="line">            android:targetPackage=&quot;cn.yky.test&quot; /&gt;</div><div class="line">        &lt;!--第一个是意图标识--&gt;</div><div class="line">        &lt;!--第二个参数是希望打开的界面--&gt;</div><div class="line">        &lt;!--希望打开界面的包名--&gt;</div><div class="line">    &lt;/shortcut&gt;</div><div class="line">&lt;/shortcuts&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意,shortcutLongLabel和shortcutShortLabel,不可以直接引用文字,不然会报错.!!!谁加谁知道.经过以上的步骤之后,就可以看到最开始的效果图了!.</p>
+</blockquote>
+<h1 id="动态添加"><a href="#动态添加" class="headerlink" title="动态添加"></a>动态添加</h1><blockquote>
+<p>动态的shortcuts可以在用户使用app的过程中构建, 更新, 或者删除.</p>
+</blockquote>
+<h2 id="ShortcutManager"><a href="#ShortcutManager" class="headerlink" title="ShortcutManager"></a>ShortcutManager</h2><ul>
+<li>设置或者新增 setDynamicShortcuts; addDynamicShortcuts;</li>
+<li>修改 updateShortcuts;</li>
+<li>删除 removeDynamicShortcuts; removeAllDynamicShortcuts; </li>
+</ul>
+<h3 id="动态添加三个"><a href="#动态添加三个" class="headerlink" title="动态添加三个"></a>动态添加三个</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.N_MR1) &#123;</div><div class="line">            mShortcutManager = getSystemService(ShortcutManager.class);</div><div class="line">            getNewShortcutInfo();</div><div class="line">        &#125;</div><div class="line">        </div><div class="line"> /**</div><div class="line">     * 动态添加三个</div><div class="line">     */</div><div class="line">    @RequiresApi(api = Build.VERSION_CODES.N_MR1)</div><div class="line">    private void getNewShortcutInfo() &#123;</div><div class="line">        ShortcutInfo shortcut = new ShortcutInfo.Builder(this, &quot;id1&quot;)</div><div class="line">                .setShortLabel(&quot;Web site&quot;)</div><div class="line">                .setLongLabel(&quot;第一个&quot;)</div><div class="line">                .setIcon(Icon.createWithResource(this, R.drawable.link))</div><div class="line">                .setIntent(new Intent(Intent.ACTION_VIEW,</div><div class="line">                        Uri.parse(&quot;https://www.baidu.com/&quot;)))</div><div class="line">                .build();</div><div class="line">        ShortcutInfo shortcut2 = new ShortcutInfo.Builder(this, &quot;id2&quot;)</div><div class="line">                .setShortLabel(&quot;Web site&quot;)</div><div class="line">                .setLongLabel(&quot;第二个&quot;)</div><div class="line">                .setIcon(Icon.createWithResource(this, R.drawable.link))</div><div class="line">                .setIntent(new Intent(Intent.ACTION_VIEW,</div><div class="line">                        Uri.parse(&quot;https://www.csdn.com/&quot;)))</div><div class="line">                .build();</div><div class="line">        ShortcutInfo shortcut3 = new ShortcutInfo.Builder(this, &quot;id3&quot;)</div><div class="line">                .setShortLabel(&quot;Web site&quot;)</div><div class="line">                .setLongLabel(&quot;第三个&quot;)</div><div class="line">                .setIcon(Icon.createWithResource(this, R.drawable.link))</div><div class="line">                .setIntent(new Intent(Intent.ACTION_VIEW,</div><div class="line">                        Uri.parse(&quot;https://www.github.com/&quot;)))</div><div class="line">                .build();</div><div class="line">        mShortcutManager.setDynamicShortcuts(Arrays.asList(shortcut, shortcut2, shortcut3));</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://img.blog.csdn.net/20171219142658399?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWFza1NoYXJr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<blockquote>
+<p>依次类推,就可以动态增删改我们的快捷方式了.虽然你想用,但是国产手机估计还得一年以内的时间能普及到吧.</p>
+</blockquote>
+<hr>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><blockquote>
+<p>本人技术有限,还有很多不完美的地方,欢迎指出.(写作不易,谢谢您的star支持)</p>
+</blockquote>
+<ul>
+<li>QQ:152046273</li>
+<li>Email:yukuoyuan@hotmail.com</li>
+<li><a href="http://blog.csdn.net/easkshark" target="_blank" rel="external">CSDN博客地址</a></li>
+<li><a href="https://yukuoyuan.github.io/archives/" target="_blank" rel="external">Github博客地址</a></li>
+<li><a href="https://github.com/yukuoyuan" target="_blank" rel="external">Github地址</a></li>
+</ul>
+<p><div id="container"></div></p>
+<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: 'yukuoyuan',
+  repo: 'yukuoyuan.github.io',
+  oauth: {
+    client_id: '305697cd991bc18f3231',
+    client_secret: '1c1040fcd1151b2eeff8287dafd6ba00378db098',
+  },
+})
+gitment.render('container')
+</script>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/Toolbar使用一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1231,7 +1408,7 @@ gitment.render('container')
             
               <a href="/archives">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1244,7 +1421,7 @@ gitment.render('container')
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
