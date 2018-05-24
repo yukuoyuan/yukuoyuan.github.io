@@ -340,6 +340,31 @@
 <p>前者切换的时候,只会把Fragment从Activity隔离开,调用的是detach()方法<br>后者切换的时候,会把Fragment移除回收掉,调用的是remove()方法</p>
 <h2 id="Fragment-的生命周期"><a href="#Fragment-的生命周期" class="headerlink" title="Fragment 的生命周期"></a>Fragment 的生命周期</h2><p><img src="https://developer.android.com/images/fragment_lifecycle.png?hl=zh-tw" alt=""></p>
 <p><img src="https://img-blog.csdn.net/20180522090827312?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Vhc2tTaGFyaw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="Fragment和Activity的生命周期"></p>
+<h2 id="Fragment-通信"><a href="#Fragment-通信" class="headerlink" title="Fragment 通信"></a>Fragment 通信</h2><h3 id="fragment调用activity的方法"><a href="#fragment调用activity的方法" class="headerlink" title="fragment调用activity的方法"></a>fragment调用activity的方法</h3><p>在fragment中直接调用getActivity();</p>
+<h3 id="activity调用fragment的方法"><a href="#activity调用fragment的方法" class="headerlink" title="activity调用fragment的方法"></a>activity调用fragment的方法</h3><p>接口回调的形式</p>
+<h3 id="fragment调用fragment的方法"><a href="#fragment调用fragment的方法" class="headerlink" title="fragment调用fragment的方法"></a>fragment调用fragment的方法</h3><p>findFragmentById();</p>
+<h2 id="Fragment中replace-add-remove方法"><a href="#Fragment中replace-add-remove方法" class="headerlink" title="Fragment中replace(),add(),remove方法"></a>Fragment中replace(),add(),remove方法</h2><h1 id="Service面试问题"><a href="#Service面试问题" class="headerlink" title="Service面试问题"></a>Service面试问题</h1><h2 id="Service的应用场景-以及与Thread的区别"><a href="#Service的应用场景-以及与Thread的区别" class="headerlink" title="Service的应用场景,以及与Thread的区别"></a>Service的应用场景,以及与Thread的区别</h2><h3 id="Service是什么"><a href="#Service是什么" class="headerlink" title="Service是什么?"></a>Service是什么?</h3><p>Service是一种可以在后台执行长时间运行操作而没有用户界面的应用组件.<br>不可以进行耗时操作,因为都是运行在主线程中.</p>
+<h3 id="Service和Thread的区别"><a href="#Service和Thread的区别" class="headerlink" title="Service和Thread的区别"></a>Service和Thread的区别</h3><p>Service可以进行销毁,子线程,不容易被摧毁掉.<br>Service是在主线程中运行,不可以进行耗时操作,Thread可以.</p>
+<h2 id="开启Service的两种方式-以及区别"><a href="#开启Service的两种方式-以及区别" class="headerlink" title="开启Service的两种方式,以及区别"></a>开启Service的两种方式,以及区别</h2><h3 id="StartService"><a href="#StartService" class="headerlink" title="StartService"></a>StartService</h3><p>通过Activity打开,就算,当前Activity被销毁,Service也会一直存在,除非手动关闭掉.<br>1.定义一个类继承Service<br>2.在配置文件中,声明该Service<br>3.使用Context的StartService()方法启动该Service<br>4.不再使用时,调用StopService(),或者stopSelf()停止该服务</p>
+<h3 id="bindService"><a href="#bindService" class="headerlink" title="bindService"></a>bindService</h3><p>1.创建bindService服务端,继承自Service.创建一个实现IBinder接口的实例对象,并提供公共方法给客户端调用<br>2.从onBind()回调方法返回此Binder示例<br>3.在客户端中,从ServiceConnected()回调方法接受Binder,并使用提供的方法调用服务.<br>4.unbindService ,Service调用onDestroy()方法,然后回调onServiceUnConnected()方法</p>
+<h1 id="Broadcast-Receiver"><a href="#Broadcast-Receiver" class="headerlink" title="Broadcast Receiver"></a>Broadcast Receiver</h1><h2 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h2><h3 id="广播使用场景"><a href="#广播使用场景" class="headerlink" title="广播使用场景"></a>广播使用场景</h3><ul>
+<li>同一app有多个进程的不同组件之间的消息通信</li>
+<li>不同app之间的组件之间的通信</li>
+</ul>
+<h3 id="有三种广播"><a href="#有三种广播" class="headerlink" title="有三种广播"></a>有三种广播</h3><ul>
+<li>无序广播 sendBroadcast</li>
+<li>有序广播 sendOrderBroadcast</li>
+<li>本地广播 localBroadcast,只在app内传播</li>
+</ul>
+<h2 id="实现广播-reiver"><a href="#实现广播-reiver" class="headerlink" title="实现广播-reiver"></a>实现广播-reiver</h2><p>1.静态注册,一直存在,在配置文件声明<br>2.动态注册,registerReceiver,跟随Activity声明周期,</p>
+<h2 id="广播实现机制"><a href="#广播实现机制" class="headerlink" title="广播实现机制"></a>广播实现机制</h2><ol>
+<li>自定义广播.并复写receiver()方法</li>
+<li>通过Binder机制向AMS(Activity Manager Service)进行注册</li>
+<li>广播发送者通过Binder机制向AMS发送广播</li>
+<li>AMS查找符合响应条件(IntentFilter/Permission等)的BroadcastReceiver,将广播发送到BroadcastReceiver(一般是Activity)相应的消息循环队列中</li>
+<li>消息循环执行拿到此广播,回调BroadcastReceiver中的onReceiver()方法</li>
+</ol>
+<h2 id="LocalBroadcastManager详解"><a href="#LocalBroadcastManager详解" class="headerlink" title="LocalBroadcastManager详解"></a>LocalBroadcastManager详解</h2><p>1.使用它发送的广播将只在自身的app中传播,因此你不必担心泄漏隐私数据<br>2.其他app无法对你的app发送该广播,因为你的App根本就不可能接收到非自身应用发送的广播,因此不必担心有安全漏洞被利用<br>3.比系统的全局广播更加高效</p>
 
           
         
@@ -1379,6 +1404,11 @@
 <h4 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
 <h4 id="在Mac上的「Sequel-pro」测试一下"><a href="#在Mac上的「Sequel-pro」测试一下" class="headerlink" title="在Mac上的「Sequel pro」测试一下"></a>在Mac上的「Sequel pro」测试一下</h4><p><img src="http://ov0vwamhh.bkt.clouddn.com/2017-12-06-Jietu20171206-195558.jpg" alt=""><br><img src="http://ov0vwamhh.bkt.clouddn.com/2017-12-06-Jietu20171206-195350.jpg" alt=""></p>
 <p>阿西吧!终于连接上了,有没有,好激动有没有</p>
+<h2 id="如何将本地文件上传到云服务器呢"><a href="#如何将本地文件上传到云服务器呢" class="headerlink" title="如何将本地文件上传到云服务器呢?"></a>如何将本地文件上传到云服务器呢?</h2><h3 id="移动到本地文件目录下"><a href="#移动到本地文件目录下" class="headerlink" title="移动到本地文件目录下"></a>移动到本地文件目录下</h3><p>cd file</p>
+<p>scp index.css root@云服务器公网IP地址:服务器文件目录</p>
+<p>回车输入密码就可以上传了</p>
+<h3 id="移动整个文件目录到云服务器指定目录"><a href="#移动整个文件目录到云服务器指定目录" class="headerlink" title="移动整个文件目录到云服务器指定目录"></a>移动整个文件目录到云服务器指定目录</h3><p>scp -r images root@云服务器公网IP地址:服务器文件目录</p>
+<h3 id="移动多个文件到云服务器指定目录"><a href="#移动多个文件到云服务器指定目录" class="headerlink" title="移动多个文件到云服务器指定目录"></a>移动多个文件到云服务器指定目录</h3><p>scp index.html index.css project1.html project2.html root@139.196.40.14:服务器文件目录<br>多个文件名之间用空格分开。</p>
 
           
         
