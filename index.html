@@ -238,6 +238,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/Fultter打卡学习第一天-Dart基础篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/26/Fultter打卡学习第一天-Dart基础篇/" itemprop="url">Fultter打卡学习第一天-Dart基础篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T14:03:41+08:00">
+                2018-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>学习一门语言.第一节课,总是–&gt;HelloWord</p>
+</blockquote>
+<h1 id="Dart语言的HelloWord"><a href="#Dart语言的HelloWord" class="headerlink" title="Dart语言的HelloWord"></a>Dart语言的HelloWord</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">void main() &#123;</div><div class="line">  print(&apos;Hello Word&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Dart语言的变量"><a href="#Dart语言的变量" class="headerlink" title="Dart语言的变量"></a>Dart语言的变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var name = &apos;张三&apos;;</div></pre></td></tr></table></figure>
+<p>该段代码的意思是声明了一个变量叫name值为’张三’的常量,但是此代码没有直接声明出该变量的类型,但是根据类型我们推断出是String,我们也可以直接声明变量的类型如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String name = &apos;张三&apos;;</div></pre></td></tr></table></figure>
+<h2 id="Dart语言变量的默认值"><a href="#Dart语言变量的默认值" class="headerlink" title="Dart语言变量的默认值"></a>Dart语言变量的默认值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var name;</div></pre></td></tr></table></figure>
+<p>例如此变量并没有指定值,其默认值是null,在Dart语言中,一切变量默认值都是null,因为一切皆为Object,包括数字类型.</p>
+<h2 id="Dart语言中的常量修饰符Final-和-const"><a href="#Dart语言中的常量修饰符Final-和-const" class="headerlink" title="Dart语言中的常量修饰符Final 和 const"></a>Dart语言中的常量修饰符Final 和 const</h2><p>如果不打算更改变量，请使用final或const，而不是var或类型.最终变量只能设置一次; const变量是编译时常量.（Const变量是隐式最终的。）最终的顶级或类变量在第一次使用时被初始化.</p>
+<blockquote>
+<p>注意：实例变量可以是final，但不是const。必须在构造函数体启动之前初始化最终实例变量 - 在变量声明，构造函数参数或构造函数的初始化列表中。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">final name = &apos;张三&apos;; //没有生命常量的类型</div><div class="line">final String nickname = &apos;Bobby&apos;;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>const的使用不太明确.之后再去探究.</p>
+</blockquote>
+<h1 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h1><ul>
+<li>numbers</li>
+<li>strings</li>
+<li>booleans</li>
+<li>lists (also known as arrays)</li>
+<li>maps</li>
+<li>runes (for expressing Unicode characters in a string)</li>
+<li>symbols</li>
+</ul>
+<p>您可以使用文字初始化任何这些特殊类型的对象。例如，’this is a string’是一个string文字，true是一个boolean文字</p>
+<h2 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>Dart 的数字类型有两种形式</p>
+<h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int i=1;</div></pre></td></tr></table></figure>
+<h3 id="double"><a href="#double" class="headerlink" title="double"></a>double</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">double i=1.0;</div></pre></td></tr></table></figure>
+<h2 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var s = &apos;string interpolation&apos;;</div></pre></td></tr></table></figure>
+<h2 id="Booleans"><a href="#Booleans" class="headerlink" title="Booleans"></a>Booleans</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var fullName = &apos;&apos;;</div><div class="line">assert(fullName.isEmpty);</div></pre></td></tr></table></figure>
+<h2 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var list = [1, 2, 3];</div></pre></td></tr></table></figure>
+<h2 id="Maps"><a href="#Maps" class="headerlink" title="Maps"></a>Maps</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var gifts = &#123;</div><div class="line">  // Key:    Value</div><div class="line">  &apos;first&apos;: &apos;partridge&apos;,</div><div class="line">  &apos;second&apos;: &apos;turtledoves&apos;,</div><div class="line">  &apos;fifth&apos;: &apos;golden rings&apos;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var nobleGases = &#123;</div><div class="line">  2: &apos;helium&apos;,</div><div class="line">  10: &apos;neon&apos;,</div><div class="line">  18: &apos;argon&apos;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Functions-方法"><a href="#Functions-方法" class="headerlink" title="Functions(方法)"></a>Functions(方法)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bool isNoble(int atomicNumber) &#123;</div><div class="line">  return _nobleGases[atomicNumber] != null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>学习了Dart语言的基础类型,和方法,基本上也够开发Flutter,随后在学习Flutter的过程中,再慢慢补充</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/Android面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1763,313 +1920,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/Android系统广播总结篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yukuoyuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Martin Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/21/Android系统广播总结篇/" itemprop="url">Android系统广播总结篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T11:20:19+08:00">
-                2017-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <table>
-<thead>
-<tr>
-<th>系统广播意图</th>
-<th>广播作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Intent.ACTION_AIRPLANE_MODE_CHANGED</td>
-<td>关闭或打开飞行模式时的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_BATTERY_CHANGED</td>
-<td>充电状态，或者电池的电量发生变化</td>
-</tr>
-<tr>
-<td>Intent.ACTION_BATTERY_LOW</td>
-<td>表示电池电量低</td>
-</tr>
-<tr>
-<td>Intent.ACTION_BATTERY_OKAY</td>
-<td>表示电池电量充足，即从电池电量低变化到饱满时会发出广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_BOOT_COMPLETED</td>
-<td>在系统启动完成后，这个动作被广播一次（只有一次</td>
-</tr>
-<tr>
-<td>Intent.ACTION_CAMERA_BUTTON</td>
-<td>按下照相时的拍照按键(硬件按键)时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_CLOSE_SYSTEM_DIALOGS</td>
-<td>当屏幕超时进行锁屏时,当用户按下电源按钮,长按或短按(不管有没跳出话框)，进行锁屏时,android系统都会广播此Action消息</td>
-</tr>
-<tr>
-<td>Intent.ACTION_CONFIGURATION_CHANGED</td>
-<td>设备当前设置被改变时发出的广播(包括的改变:界面语言，设备方向，等，请参考Configuration.java)</td>
-</tr>
-<tr>
-<td>Intent.ACTION_DATE_CHANGED</td>
-<td>设备日期发生改变时会发出此广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_DEVICE_STORAGE_LOW</td>
-<td>设备内存不足时发出的广播,此广播只能由系统使用，其它APP不可用</td>
-</tr>
-<tr>
-<td>Intent.ACTION_DEVICE_STORAGE_OK</td>
-<td>设备内存从不足到充足时发出的广播,此广播只能由系统使用，其它APP不可用</td>
-</tr>
-<tr>
-<td>Intent.ACTION_HEADSET_PLUG</td>
-<td>在耳机口上插入耳机时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_INPUT_METHOD_CHANGED</td>
-<td>改变输入法时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_LOCALE_CHANGED</td>
-<td>设备当前区域设置已更改时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_MEDIA_BAD_REMOVAL</td>
-<td>未正确移除SD卡(正确移除SD卡的方法:设置–SD卡和设备内存–卸载SD卡)，但已把SD卡取出来时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_MEDIA_BUTTON</td>
-<td>按下”Media Button” 按键时发出的广播,假如有”Media Button”按键的话(硬件按键)</td>
-</tr>
-<tr>
-<td>Intent.ACTION_MEDIA_CHECKING</td>
-<td>插入外部储存装置，比如SD卡时，系统会检验SD卡，此时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_MEDIA_EJECT</td>
-<td>已拔掉外部大容量储存设备发出的广播（比如SD卡，或移动硬盘）,不管有没有正确卸载都会发出此广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_MEDIA_MOUNTED</td>
-<td>插入SD卡并且已正确安装（识别）时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_MEDIA_REMOVED</td>
-<td>外部储存设备已被移除，不管有没正确卸载,都会发出此广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_MEDIA_SCANNER_FINISHED</td>
-<td>已经扫描完介质的一个目录</td>
-</tr>
-<tr>
-<td>Intent.ACTION_PACKAGE_ADDED</td>
-<td>成功的安装APK之后</td>
-</tr>
-<tr>
-<td>Intent.ACTION_PACKAGE_CHANGED</td>
-<td>一个已存在的应用程序包已经改变，包括包名</td>
-</tr>
-<tr>
-<td>Intent.ACTION_PACKAGE_DATA_CLEARED</td>
-<td>清除一个应用程序的数据时发出的广播(在设置－－应用管理－－选中某个应用，之后点清除数据时</td>
-</tr>
-<tr>
-<td>Intent.ACTION_PACKAGE_INSTAL</td>
-<td>触发一个下载并且完成安装时发出的广播，比如在电子市场里下载应用</td>
-</tr>
-<tr>
-<td>Intent.ACTION_PACKAGE_REMOVED</td>
-<td>成功的删除某个APK之后发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_PACKAGE_REPLACED</td>
-<td>替换一个现有的安装包时发出的广播（不管现在安装的APP比之前的新还是旧，都会发出此广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_PACKAGE_RESTARTED</td>
-<td>用户重新开始一个包，包的所有进程将被杀死，所有与其联系的运行时间状态应该被移除，包括包名（重新开始包程序不能接收到这个广播）</td>
-</tr>
-<tr>
-<td>Intent.ACTION_POWER_CONNECTED</td>
-<td>插上外部电源时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_POWER_DISCONNECTED</td>
-<td>已断开外部电源连接时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_REBOOT</td>
-<td>重启设备时的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_SCREEN_OFF</td>
-<td>屏幕被关闭之后的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_SCREEN_ON</td>
-<td>屏幕被打开之后的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_SHUTDOWN</td>
-<td>关闭系统时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_TIMEZONE_CHANGED</td>
-<td>时区发生改变时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_TIME_CHANGED</td>
-<td>时间被设置时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_TIME_TICK</td>
-<td>当前时间改变，每分钟都发送，不能通过组件声明来接收，只有通过Context.registerReceiver()方法来注册</td>
-</tr>
-<tr>
-<td>Intent.ACTION_UID_REMOVED</td>
-<td>一个用户ID已经从系统中移除发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_UMS_CONNECTED</td>
-<td>设备已进入USB大容量储存状态时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_UMS_DISCONNECTED</td>
-<td>设备已从USB大容量储存状态转为正常状态时发出的广播</td>
-</tr>
-<tr>
-<td>Intent.ACTION_WALLPAPER_CHANGED</td>
-<td>设备墙纸已改变时发出的广播</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>以上就是我总结的android系统一些操作,所发出的广播,有些广播是需要申请权限的,例如网路状态改变的广播,希望可以帮到你</p>
-</blockquote>
-<hr>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><blockquote>
-<p>本人技术有限,还有很多不完美的地方,欢迎指出.(写作不易,谢谢您的star支持)</p>
-</blockquote>
-<ul>
-<li>QQ: 152046273</li>
-<li>Email: yukuoyuan@hotmail.com</li>
-<li><a href="http://blog.csdn.net/easkshark" target="_blank" rel="external">CSDN博客地址</a></li>
-<li><a href="https://yukuoyuan.github.io/archives/" target="_blank" rel="external">Github博客地址</a></li>
-<li><a href="https://github.com/yukuoyuan" target="_blank" rel="external">Github地址</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2123,7 +1973,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2136,7 +1986,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
