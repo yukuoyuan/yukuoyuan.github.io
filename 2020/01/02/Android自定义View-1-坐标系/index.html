@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android自定义View," />
 
 
 
@@ -95,17 +95,24 @@
 
 
 
-<meta name="description" content="男人要么拎枪保家卫国,要么办公室运筹帷幄">
+<meta name="description" content="屏幕坐标系和数学中的坐标系的区别由于Android定义屏幕==左上角为坐标原点== , ==向右为x轴增大方向== , ==向下为y轴增大方向== , 所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的. 详情如下图：  &amp;lt;&amp;lt;&amp;lt;&amp;lt;—-&amp;gt;&amp;gt;&amp;gt;&amp;gt;  实际手机屏幕的坐标(黄色区域为手机屏幕) View(控件)在屏幕中坐标的获取对于屏幕而言的坐标获">
+<meta name="keywords" content="Android自定义View">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android自定义View-1-坐标系">
+<meta property="og:title" content="Android自定义View-(1)-坐标系">
 <meta property="og:url" content="http://yoursite.com/2020/01/02/Android自定义View-1-坐标系/index.html">
 <meta property="og:site_name" content="Martin Yu">
-<meta property="og:description" content="男人要么拎枪保家卫国,要么办公室运筹帷幄">
+<meta property="og:description" content="屏幕坐标系和数学中的坐标系的区别由于Android定义屏幕==左上角为坐标原点== , ==向右为x轴增大方向== , ==向下为y轴增大方向== , 所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的. 详情如下图：  &amp;lt;&amp;lt;&amp;lt;&amp;lt;—-&amp;gt;&amp;gt;&amp;gt;&amp;gt;  实际手机屏幕的坐标(黄色区域为手机屏幕) View(控件)在屏幕中坐标的获取对于屏幕而言的坐标获">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-02T07:47:23.817Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20161202150247504">
+<meta property="og:image" content="https://img-blog.csdn.net/20161202150325102">
+<meta property="og:image" content="https://img-blog.csdn.net/20161202151004546">
+<meta property="og:image" content="https://img-blog.csdn.net/20161202151809952">
+<meta property="og:image" content="https://img-blog.csdn.net/20161202152103343">
+<meta property="og:updated_time" content="2020-01-02T08:04:55.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android自定义View-1-坐标系">
-<meta name="twitter:description" content="男人要么拎枪保家卫国,要么办公室运筹帷幄">
+<meta name="twitter:title" content="Android自定义View-(1)-坐标系">
+<meta name="twitter:description" content="屏幕坐标系和数学中的坐标系的区别由于Android定义屏幕==左上角为坐标原点== , ==向右为x轴增大方向== , ==向下为y轴增大方向== , 所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的. 详情如下图：  &amp;lt;&amp;lt;&amp;lt;&amp;lt;—-&amp;gt;&amp;gt;&amp;gt;&amp;gt;  实际手机屏幕的坐标(黄色区域为手机屏幕) View(控件)在屏幕中坐标的获取对于屏幕而言的坐标获">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20161202150247504">
 
 
 
@@ -141,7 +148,7 @@
 
 
 
-  <title>Android自定义View-1-坐标系 | Martin Yu</title>
+  <title>Android自定义View-(1)-坐标系 | Martin Yu</title>
   
 
 
@@ -255,7 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android自定义View-1-坐标系</h1>
+          <h1 class="post-title" itemprop="name headline">Android自定义View-(1)-坐标系</h1>
         
 
         <div class="post-meta">
@@ -305,7 +312,17 @@
       
 
       
-        
+        <h2 id="屏幕坐标系和数学中的坐标系的区别"><a href="#屏幕坐标系和数学中的坐标系的区别" class="headerlink" title="屏幕坐标系和数学中的坐标系的区别"></a>屏幕坐标系和数学中的坐标系的区别</h2><p>由于Android定义屏幕==左上角为坐标原点== , ==向右为x轴增大方向== , ==向下为y轴增大方向== , 所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的.</p>
+<p>详情如下图：</p>
+<p><img src="https://img-blog.csdn.net/20161202150247504" alt="Android屏幕的坐标系"> &lt;&lt;&lt;&lt;—-&gt;&gt;&gt;&gt; <img src="https://img-blog.csdn.net/20161202150325102" alt="数学坐标的坐标系"></p>
+<h2 id="实际手机屏幕的坐标-黄色区域为手机屏幕"><a href="#实际手机屏幕的坐标-黄色区域为手机屏幕" class="headerlink" title="实际手机屏幕的坐标(黄色区域为手机屏幕)"></a>实际手机屏幕的坐标(黄色区域为手机屏幕)</h2><p><img src="https://img-blog.csdn.net/20161202151004546" alt="实际屏幕的坐标"></p>
+<h2 id="View-控件-在屏幕中坐标的获取"><a href="#View-控件-在屏幕中坐标的获取" class="headerlink" title="View(控件)在屏幕中坐标的获取"></a>View(控件)在屏幕中坐标的获取</h2><h3 id="对于屏幕而言的坐标获取"><a href="#对于屏幕而言的坐标获取" class="headerlink" title="对于屏幕而言的坐标获取"></a>对于屏幕而言的坐标获取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int[] location = new int[2];</div><div class="line">view.getLocationInWindow(location); //获取在当前窗口内的绝对坐标</div><div class="line">view.getLocationOnScreen(location); //获取在当前屏幕内的绝对坐标</div><div class="line">location[0]; // 该View位于屏幕的x值</div><div class="line">location[1]; // 该View位于屏幕的y值</div></pre></td></tr></table></figure>
+<h3 id="对于父控件的坐标获取"><a href="#对于父控件的坐标获取" class="headerlink" title="对于父控件的坐标获取"></a>对于父控件的坐标获取</h3><p>详情如下图所示:</p>
+<p><img src="https://img-blog.csdn.net/20161202151809952" alt="view相对于父布局"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">getTop();       //获取子View左上角距父View顶部的距离</div><div class="line">getLeft();      //获取子View左上角距父View左侧的距离</div><div class="line">getBottom();    //获取子View右下角距父View顶部的距离</div><div class="line">getRight();     //获取子View右下角距父View左侧的距离</div></pre></td></tr></table></figure>
+<h3 id="在MotionEvent中-get-和-getRaw-方法的区别"><a href="#在MotionEvent中-get-和-getRaw-方法的区别" class="headerlink" title="在MotionEvent中 get 和 getRaw 方法的区别"></a>在MotionEvent中 get 和 getRaw 方法的区别</h3><p><img src="https://img-blog.csdn.net/20161202152103343" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">event.getX();       //触摸点相对于其所在组件坐标系的坐标</div><div class="line">event.getY();</div><div class="line"></div><div class="line">event.getRawX();    //触摸点相对于屏幕默认坐标系的坐标</div><div class="line">event.getRawY();</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -319,6 +336,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android自定义View/" rel="tag"># Android自定义View</a>
+          
+        </div>
       
 
       
@@ -389,8 +412,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -421,7 +453,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -492,6 +524,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕坐标系和数学中的坐标系的区别"><span class="nav-number">1.</span> <span class="nav-text">屏幕坐标系和数学中的坐标系的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际手机屏幕的坐标-黄色区域为手机屏幕"><span class="nav-number">2.</span> <span class="nav-text">实际手机屏幕的坐标(黄色区域为手机屏幕)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View-控件-在屏幕中坐标的获取"><span class="nav-number">3.</span> <span class="nav-text">View(控件)在屏幕中坐标的获取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对于屏幕而言的坐标获取"><span class="nav-number">3.1.</span> <span class="nav-text">对于屏幕而言的坐标获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于父控件的坐标获取"><span class="nav-number">3.2.</span> <span class="nav-text">对于父控件的坐标获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在MotionEvent中-get-和-getRaw-方法的区别"><span class="nav-number">3.3.</span> <span class="nav-text">在MotionEvent中 get 和 getRaw 方法的区别</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
