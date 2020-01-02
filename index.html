@@ -238,6 +238,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/Android自定义View-1-坐标系/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/02/Android自定义View-1-坐标系/" itemprop="url">Android自定义View-1-坐标系</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T15:47:23+08:00">
+                2020-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/blog2018年总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1775,206 +1894,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/Kotlin进阶三/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yukuoyuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Martin Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/14/Kotlin进阶三/" itemprop="url">Kotlin进阶(三)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T14:10:53+08:00">
-                2018-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>本节介绍使用Kotlin委托适配器和数据类</p>
-</blockquote>
-<h2 id="本节学到的东西"><a href="#本节学到的东西" class="headerlink" title="本节学到的东西"></a>本节学到的东西</h2><ul>
-<li>初始化构造函数</li>
-<li>对象表达式</li>
-<li>单例表达式</li>
-<li>数据类</li>
-<li>范围</li>
-<li>List &amp; Lambdas表达式</li>
-</ul>
-<h2 id="创建NewsAdapter"><a href="#创建NewsAdapter" class="headerlink" title="创建NewsAdapter"></a>创建NewsAdapter</h2><p>我们的适配器将有一个委托适配器列表，那些将负责知道如何inflate并返回RecyclerView中的特定视图.一般想法是接收一个ViewType项目列表，并根据此ViewType获取相应的委托适配器来inflate并填充该项目的视图.该项目将用作参数传递给委托适配器，以便该项目可用于为此视图提取特定数据.</p>
-<h3 id="ViewType"><a href="#ViewType" class="headerlink" title="ViewType"></a>ViewType</h3><p>这是我们将用于我们要在RecyclerView中显示的项目的接口.每个项目必须实现这个接口，以便我们可以向每个项目询问ViewType类型（int值）并搜索相应的委托适配器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">interface ViewType &#123;</div><div class="line">    fun getViewType(): Int</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在我们的适配器中，我们将有一个名为items的ViewType列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">private var items: ArrayList&lt;ViewType&gt;</div></pre></td></tr></table></figure>
-<p>在这里，我们将存储新闻和加载项目。我们的新闻模型将从ViewType扩展，我们将在本地为加载item创建一个新item.</p>
-<h3 id="给我们的Recycle-View添加一个loadingView"><a href="#给我们的Recycle-View添加一个loadingView" class="headerlink" title="给我们的Recycle View添加一个loadingView."></a>给我们的Recycle View添加一个loadingView.</h3><p><img src="https://cdn-images-1.medium.com/max/800/1*tbMqbIcySrv9u3KATKQfNw.png" alt=""></p>
-<ul>
-<li>ViewType 的Type:这将是一个integer值（如ID），以将我们的ViewType与委托适配器（AdapterConstants.LOADING）相匹配</li>
-<li>ViewType 的Item:这将是一个实现ViewType接口并返回ViewType类型（ID）的对象。这将允许我们将这个item插入到items列表中，并告诉适配器呈现这个视图</li>
-<li>Loading Delegate Adapter:负责将视图inflating并将其返回给我们的NewsAdapter。</li>
-</ul>
-<h3 id="Loading-Delegate-Adapter-实现"><a href="#Loading-Delegate-Adapter-实现" class="headerlink" title="Loading Delegate Adapter 实现"></a>Loading Delegate Adapter 实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class LoadingDelegateAdapter : ViewTypeDelegateAdapter &#123;</div><div class="line"></div><div class="line">    override fun onCreateViewHolder(parent: ViewGroup) = TurnsViewHolder(parent)</div><div class="line"></div><div class="line">    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewType) &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    class TurnsViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(</div><div class="line">            parent.inflate(R.layout.news_item_loading)) &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>正如您所看到的，我们通过扩展另一个名为“ViewTypeDelegateAdapter”的接口来创建Delegate Adapter.这个接口允许我们拥有一个delegated adapters的通用列表，并调用这些方法，而不需要我们的NewsAdapter知道具体的delegated adapters实现.一种方法来创建ViewHolder，另一种方法绑定它</p>
-<h3 id="使用Delegate-Adapter绑定ViewType类型"><a href="#使用Delegate-Adapter绑定ViewType类型" class="headerlink" title="使用Delegate Adapter绑定ViewType类型"></a>使用Delegate Adapter绑定ViewType类型</h3><p>我们将使用map来将ViewType类型与委托适配器绑定（这将在NewsAdapter类中进行）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">private var delegateAdapters = SparseArrayCompat&lt;ViewTypeDelegateAdapter&gt;()</div><div class="line">init &#123;</div><div class="line">    delegateAdapters.put(AdapterConstants.LOADING, LoadingDelegateAdapter())</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="初始化构造方法"><a href="#初始化构造方法" class="headerlink" title="初始化构造方法"></a>初始化构造方法</h3><p>init是Kotlin中为类的构造函数（在这种情况下为NewsAdapter）中的保留字，在此我们将初始化此映射，并将每个ViewType类型与相应的委托适配器相加。</p>
-<p>为了在Kotlin中创建一个新对象，你不需要使用“new”关键字。</p>
-<h3 id="加载ViewType-Item"><a href="#加载ViewType-Item" class="headerlink" title="加载ViewType Item"></a>加载ViewType Item</h3><p>让我们创建我们的 Loading item，这个item将帮助我们将加载view渲染到我们将其插入到项目列表中的位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">private val loadingItem = object : ViewType &#123;</div><div class="line">    override fun getViewType() : Int &#123;</div><div class="line">        return AdapterConstants.LOADING</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>此外，默认添加这个项目作为第一个要在列表中呈现的项目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">init &#123;</div><div class="line">    delegateAdapters.put(...)</div><div class="line">    items = ArrayList()</div><div class="line">    items.add(loadingItem)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Object-表达式"><a href="#Object-表达式" class="headerlink" title="Object 表达式"></a>Object 表达式</h3><p>在Kotlin中，你有一种叫做“对象表达式”的东西，其工作方式与Java中的匿名内部类相似，并允许你创建一个对象，而不必为它明确声明一个新的子类.在这种情况下，我们使用它来定义我们的loadingItem而不创建新的类。语法非常直观，您可以看到我们正在从ViewType进行扩展并实现所需的接口。</p>
-<h3 id="Single表达式"><a href="#Single表达式" class="headerlink" title="Single表达式"></a>Single表达式</h3><p>getViewType（）方法在主体内只有一个表达式函数。在Kotlin中，我们可以利用这一点并转换此方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">override fun getViewType() : Int &#123;</div><div class="line">    return AdapterConstants.LOADING</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>转换为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">override fun getViewType() = AdapterConstants.LOADING</div></pre></td></tr></table></figure>
-<p>这就像我们正在将AdapterConstants.LOADING的值分配给一个函数。这是做同样的简短方法，它更简洁。你也不必指定返回值类型，因为它可以通过上下文来推断。所以这就是它现在的样子.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">private val loadingItem = object : ViewType &#123;</div><div class="line">    override fun getViewType() = AdapterConstants.LOADING</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h3><p><a href="https://github.com/juanchosaravia/KedditBySteps/commit/ecc2546b5a0001149f9fe0ca3295d31ecd9ac542" target="_blank" rel="external">以上的代码在这次提交中</a></p>
-<h2 id="带有数据类的新闻项目"><a href="#带有数据类的新闻项目" class="headerlink" title="带有数据类的新闻项目"></a>带有数据类的新闻项目</h2><p>在创建我们的News委托适配器并配置NewsAdapter以接收新闻列表之前，我们需要我们的UI对象来表示每条新闻。在Java中，我们通常会像这样创建一个类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class RedditNewsItem &#123;</div><div class="line"></div><div class="line">    private String author;</div><div class="line">    private String title;</div><div class="line"></div><div class="line">    public MyNews(String author, String title) &#123;</div><div class="line">        this.author = author;</div><div class="line">        this.title = title;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getAuthor() &#123;</div><div class="line">        return author;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setAuthor(String author) &#123;</div><div class="line">        this.author = author;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getTitle() &#123;</div><div class="line">        return title;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setTitle(String title) &#123;</div><div class="line">        this.title = title;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Kotlin来帮助我们使用一种称为“数据类”的新类类型，它为您带来了很多好处，对于相同的示例，它看起来像这样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data class RedditNewsItem(var author: String, var title: String)</div></pre></td></tr></table></figure>
-<p>通过这个简单的线条，您可以完成与之前的Java代码相同的工作，这意味着作者和标题拥有自己的getter和setter，并且它需要一个带有这两个元素的构造函数.这真是太棒了！可是等等！如果您参加此数据class，您仍可获得更多方便的地方，您可免费获得此class：</p>
-<ul>
-<li>equals/hashCode</li>
-<li>toString()包含所有的属性</li>
-<li>copy（）方法可以轻松copy对象的副本</li>
-<li>和其他有用的方法，我们不会在这里看到，但你可以在<a href="https://kotlinlang.org/docs/reference/data-classes.html" target="_blank" rel="external">官方页面</a>看到更多.</li>
-</ul>
-<h3 id="Commit-创建-Data-Class"><a href="#Commit-创建-Data-Class" class="headerlink" title="Commit: 创建 Data Class"></a>Commit: 创建 Data Class</h3><p><a href="https://github.com/juanchosaravia/KedditBySteps/commit/3c200af22879e3ec16aaa963ca38ec7e97659971" target="_blank" rel="external">点击这里</a></p>
-<h2 id="创建NewsDelegateAdapter"><a href="#创建NewsDelegateAdapter" class="headerlink" title="创建NewsDelegateAdapter"></a>创建NewsDelegateAdapter</h2><p>现在我们创建了新闻项目，我们需要我们的委托适配器负责创建视图。在这里，您可以预览我们需要什么</p>
-<p><img src="https://cdn-images-1.medium.com/max/800/1*xXiI1n-jXkV2oEjGuUTTXw.png" alt=""></p>
-<ul>
-<li>显示一些文字，如标题，作者，评论等</li>
-<li>一张图片，我们要使用Picasso（参见下面的提交中的build.gradle文件）</li>
-<li>扩展功能以这种方式显示时间</li>
-</ul>
-<h3 id="Picasso的扩展功能"><a href="#Picasso的扩展功能" class="headerlink" title="Picasso的扩展功能"></a>Picasso的扩展功能</h3><p>允许我使ImageView直接加载它的图像</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fun ImageView.loadImg(imageUrl: String) &#123;</div><div class="line">    if (TextUtils.isEmpty(imageUrl)) &#123;</div><div class="line">        Picasso.with(context).load(R.mipmap.ic_launcher).into(this)</div><div class="line">    &#125; else &#123;</div><div class="line">        Picasso.with(context).load(imageUrl).into(this)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Time的扩展方法"><a href="#Time的扩展方法" class="headerlink" title="Time的扩展方法"></a>Time的扩展方法</h3><p>我们将从Reddit接收长格式的评论时间，所以我们在这里做的是将一个Long类型转换为像“3天1分钟前”格式的字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fun Long.getFriendlyTime(): String &#123;</div><div class="line">    // logic here...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>检出名为“TimeExt.kt”的文件以查看代码。当然，它可以改进，但为了这个例子的目的，它是完美的:)</p>
-<h3 id="新闻视图的Android扩展程序"><a href="#新闻视图的Android扩展程序" class="headerlink" title="新闻视图的Android扩展程序"></a>新闻视图的Android扩展程序</h3><p>检出文件“NewsDelegateAdapter.kt”，你会看到我们也在使用Android扩展来展示这个视图（就像我们用NewsFragment做的那样）但是在这种情况下，我们在布局名称的末尾添加了一个名为“view”的额外值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import kotlinx.android.synthetic.main.news_item.view.*</div></pre></td></tr></table></figure>
-<p>这是Android扩展允许您仍然将视图与代码绑定而不在Activity或Fragment（如本例中）的上下文中的方式</p>
-<h2 id="更新NewsAdapter以接收新闻"><a href="#更新NewsAdapter以接收新闻" class="headerlink" title="更新NewsAdapter以接收新闻"></a>更新NewsAdapter以接收新闻</h2><p>让我们修改我们的NewsAdapter，以获得新闻和加载委托适配器显示的模拟新闻列表<br><img src="https://cdn-images-1.medium.com/max/800/1*jrykirwOSKgQ3KkgRmzqYw.png" alt=""></p>
-<h3 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h3><p>Kotlin允许您通过使用如下的表达式以简单的方式创建一系列数字（Int，Long和Char类型）：“1..10”，<br>这将返回一个IntRange（因为我们在本例中使用了Ints）.IntRange从IntProgression扩展并实现Iterable。由于这个原因，我们可以迭代我们有的范围，在这种情况下从1到10来创建我们的模拟数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (i in 1..10) &#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="mutableListOf"><a href="#mutableListOf" class="headerlink" title="mutableListOf"></a>mutableListOf</h3><p>这是一个Kotlin函数，它返回一个MutableList，一个可以修改的列表，在这种情况下，它将在本地存储适配器的模拟新闻：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">val news = mutableListOf&lt;RedditNewsItem&gt;()</div></pre></td></tr></table></figure>
-<h3 id="Lists-方法-amp-Lambdas"><a href="#Lists-方法-amp-Lambdas" class="headerlink" title="Lists 方法 &amp; Lambdas"></a>Lists 方法 &amp; Lambdas</h3><p>我创建了一个方法，稍后我将使用它来保存新闻，当我们处于Orientation Change事件的中间时，但是我想向您展示使用list来过滤和映射（转换）每个项目是多么容易从一个列表到另一个列表。</p>
-<p>在我们的代码中，我们有一个名为“getNews”的方法，它返回RedditNewsItems列表。为了过滤和转换我们的项目（一个ViewType列表），我们将这样做</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fun getNews(): List&lt;RedditNewsItem&gt; &#123;</div><div class="line">    return items</div><div class="line">            .filter &#123; it.getViewType() == AdapterConstants.NEWS &#125;</div><div class="line">            .map &#123; it as RedditNewsItem &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h3><p>每个列表都有一些有用的功能，例如“filter”，在这种情况下，它允许我们迭代列表并过滤（排除）不适用某些条件的项目。在我们的物品清单中，我们有ViewTypes，所以我们可以拥有新闻物品或加载物品，使用此过滤功能，我们确保只返回那些是新闻物品的物品。</p>
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>另一个很棒的功能是“map”来转换列表中的项目。在这种情况下，我们将一个ViewType对象转换为RedditNewsItem，但我们也可以创建并返回新的对象</p>
-<h3 id="Lambdas"><a href="#Lambdas" class="headerlink" title="Lambdas"></a>Lambdas</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.map &#123; it as RedditNewsItem &#125;</div></pre></td></tr></table></figure>
-<p>Map并不是另一种认为接受作为第一个参数的函数，但Kotlin使它变得非常棒，因为它允许您排除括号并在函数名称旁边定义代码块.最后，这个代码块将成为函数所需的第一个参数，代码块是着名的Lambda表达式，这是一个未声明但作为表达式立即传递的函数</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我知道我花了更多的时间来解释委托适配器模式，而不是Kotlin的特定功能，但是我确定我认为这种模式确实是一种非常好的模式，值得使用Kotlin代码但我希望你已经用这个新代码学习了新的Kotlin特性。此外，我们的代码变得越来越好（或在列表中显示UI中的东西，哈哈）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2028,7 +1947,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2129,7 +2048,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
