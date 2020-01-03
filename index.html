@@ -238,6 +238,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/Android自定义View(二)-角度和弧度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yukuoyuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Martin Yu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/03/Android自定义View(二)-角度和弧度/" itemprop="url">Android自定义View(二)-角度和弧度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-03T09:49:46+08:00">
+                2020-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="角度和弧度的定义"><a href="#角度和弧度的定义" class="headerlink" title="角度和弧度的定义"></a>角度和弧度的定义</h2><h3 id="角度"><a href="#角度" class="headerlink" title="角度"></a>角度</h3><blockquote>
+<p>两条射线从圆心向圆周射出，形成一个夹角和夹角正对的一段弧。当这段==弧长正好等于圆周长的360分之一==时，两条射线的夹角的大小为==1度==.</p>
+</blockquote>
+<h3 id="弧度"><a href="#弧度" class="headerlink" title="弧度"></a>弧度</h3><blockquote>
+<p>两条射线从圆心向圆周射出，形成一个夹角和夹角正对的一段弧。当这段==弧长正好等于圆的半径==时，两条射线的夹角大小为==1弧度==.</p>
+</blockquote>
+<p><img src="https://img-blog.csdn.net/20161205135404825" alt="">&lt;&lt;&lt;—&gt;&gt;&gt;<img src="https://img-blog.csdn.net/20161205135421657" alt=""></p>
+<h2 id="角度和弧度的换算"><a href="#角度和弧度的换算" class="headerlink" title="角度和弧度的换算"></a>角度和弧度的换算</h2><blockquote>
+<p>圆一周对应的角度为360度(角度)，对应的弧度为2π弧度。<br>故得等价关系:==360(角度) = 2π(弧度) ==&gt; 180(角度) = π(弧度)==</p>
+</blockquote>
+<p>由等价关系可得如下换算公式:</p>
+<p>==rad 是弧度， deg 是角度==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">rad = deg x π / 180 </div><div class="line"></div><div class="line">- - - -&gt; &gt;</div><div class="line"></div><div class="line">eg : </div><div class="line"></div><div class="line">	2π ＝ 360 x π / 180</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">deg = rad x 180 / π </div><div class="line"></div><div class="line">- - - -&gt; &gt;</div><div class="line"></div><div class="line">eg :</div><div class="line"></div><div class="line"> 	360 ＝ 2π x 180 / π</div></pre></td></tr></table></figure>
+<h2 id="Android手机的角度和弧度"><a href="#Android手机的角度和弧度" class="headerlink" title="Android手机的角度和弧度"></a>Android手机的角度和弧度</h2><blockquote>
+<p>在常见的==数学坐标系==中角度增大方向为==逆时针==，<br>在默认的==屏幕坐标系==中角度增大方向为==顺时针==。</p>
+</blockquote>
+<p><img src="https://img-blog.csdn.net/20161205140512286" alt="Android手机角度增大方向"></p>
+<p>上一篇系列文章 <a href="https://yukuoyuan.github.io/2020/01/02/Android%E8%87%AA%E5%AE%9A%E4%B9%89View(%E4%B8%80" target="_blank" rel="external">Android自定义View(一)-坐标系</a>-%E5%9D%90%E6%A0%87%E7%B3%BB/)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/Android自定义View(一)-坐标系/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1737,178 +1875,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/CentOs云服务器配置环境/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yukuoyuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xp26r.com1.z0.glb.clouddn.com/mmexport1504411147838.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Martin Yu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/20/CentOs云服务器配置环境/" itemprop="url">CentOs云服务器配置环境</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T14:07:04+08:00">
-                2018-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>昨天团购买了一台垃圾服务器,不过对于我这种初级人来说,已经足够折腾玩了.但是,如何去配置我们需要的环境的呢.那我们开启人生的初体验吧(第一次配置服务器).</p>
-</blockquote>
-<h2 id="Python环境"><a href="#Python环境" class="headerlink" title="Python环境"></a>Python环境</h2><p>因为我想学习写后台,所以我选择搭建python环境.安装Python可以去下载Python3.x（不要再用Python2.7了!!），也可以通过Anaconda安装。我推荐使用<a href="https://www.anaconda.com/download/#linux" target="_blank" rel="external">Anaconda</a>安装，能省去很多体力活。下面就开始安装<a href="https://www.anaconda.com/download/#linux" target="_blank" rel="external">Anaconda</a><br><img src="http://img-blog.csdn.net/20180320142334413?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L0Vhc2tTaGFyaw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>下载下来的是一个sh文件，我们通过wget(<a href="http://man.linuxde.net/wget" target="_blank" rel="external">wget命令详解</a>)来下载,并通过sh来执行这个安装文件.</p>
-<p>这是<a href="https://repo.continuum.io/archive/index.html" target="_blank" rel="external">Anaconda文件下载列表</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://repo.continuum.io/archive/Anaconda2-5.1.0-Linux-x86_64.sh</div></pre></td></tr></table></figure></p>
-<p>之后通过ls命令查看文件名字</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# ls</div><div class="line">Anaconda3-5.1.0-Linux-x86_64.sh</div></pre></td></tr></table></figure>
-<p>通过sh命令安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh Anaconda3-5.1.0-Linux-x86_64.sh</div></pre></td></tr></table></figure>
-<p>最后通过python命令验证是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# python</div><div class="line">Python 2.7.5 (default, Aug  4 2017, 00:39:18)</div><div class="line">[GCC 4.8.5 20150623 (Red Hat 4.8.5-16)] on linux2</div><div class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
-<p>当看到python版本号,以及&gt;&gt;&gt;这个证明进入到python命令行</p>
-<p>但是我们发现,我们安装的明明是3.x版本,怎么显示2.x版本.那是因为2.x是系统自带的,我们需要更改默认支持的版本为最新的3.x版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# ls</div><div class="line">anaconda3  Anaconda3-5.1.0-Linux-x86_64.sh  mysql57-community-release-el7-11.noarch.rpm</div><div class="line">[root@VM_0_3_centos ~]# cd anaconda3</div><div class="line">[root@VM_0_3_centos anaconda3]# alias python=/root/anaconda3/bin/python</div><div class="line">[root@VM_0_3_centos anaconda3]# python -V</div><div class="line">Python 3.6.4 :: Anaconda, Inc.</div></pre></td></tr></table></figure>
-<p>最后我们看到python的版本号位3.x,证明修改成功</p>
-<h2 id="mysql安装和配置"><a href="#mysql安装和配置" class="headerlink" title="mysql安装和配置"></a>mysql安装和配置</h2><p>下载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget &apos;https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm&apos;</div></pre></td></tr></table></figure>
-<p>添加yum源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo rpm -Uvh mysql57-community-release-el7-11.noarch.rpm</div><div class="line"></div><div class="line">yum repolist all | grep mysql</div></pre></td></tr></table></figure>
-<p>开始安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install mysql-community-server</div></pre></td></tr></table></figure>
-<p>启动服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service mysqld start</div></pre></td></tr></table></figure>
-<p>查看状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service status mysqld</div></pre></td></tr></table></figure>
-<p>登录mysql(第一次登录是生成的随机密码)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
-<p>第一次登录的随机密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# sudo grep &apos;temporary password&apos; /var/log/mysqld.log</div><div class="line">2018-03-20T01:11:04.660167Z 1 [Note] A temporary password is generated for root@localhost: skhsLIp?Q6u-</div></pre></td></tr></table></figure>
-<p>冒号后边的是临时密码</p>
-<p><img src="http://img-blog.csdn.net/20180320150440191?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L0Vhc2tTaGFyaw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="">自定义登录密码(默认密码策略validate_password要求密码至少包含一个大写字母，一个小写字母，一个数字和一个特殊字符，并且总密码长度至少为8个字符。)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;MyNewPass4!&apos;;</div></pre></td></tr></table></figure>
-<h2 id="安装mysql客户端-并远程连接调试"><a href="#安装mysql客户端-并远程连接调试" class="headerlink" title="安装mysql客户端.并远程连接调试"></a>安装mysql客户端.并远程连接调试</h2><p>我安装的是<a href="https://www.sequelpro.com/" target="_blank" rel="external">Sequel Pro</a>是一个免费的mac版本的mysql客户端</p>
-<h4 id="本地远程连接我们的服务器"><a href="#本地远程连接我们的服务器" class="headerlink" title="本地远程连接我们的服务器"></a>本地远程连接我们的服务器</h4><p>然后打开我们的命令行远程连接到我们的服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh root@119.23.203.252</div></pre></td></tr></table></figure>
-<p>后边的是我们自己买的云服务器的公网ip.回车之后输入密码就可以远程连接到我们的服务器了</p>
-<h4 id="启动我们的mysql服务"><a href="#启动我们的mysql服务" class="headerlink" title="启动我们的mysql服务"></a>启动我们的mysql服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# service mysqld start</div></pre></td></tr></table></figure>
-<h4 id="设置我们的mysql开机自启动"><a href="#设置我们的mysql开机自启动" class="headerlink" title="设置我们的mysql开机自启动"></a>设置我们的mysql开机自启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# chkconfig mysqld on</div></pre></td></tr></table></figure>
-<h4 id="登录我们mysql"><a href="#登录我们mysql" class="headerlink" title="登录我们mysql"></a>登录我们mysql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@VM_0_3_centos ~]# mysql -uroot -p</div></pre></td></tr></table></figure>
-<h4 id="设置我们mysql可以在任何ip下账号密码登录"><a href="#设置我们mysql可以在任何ip下账号密码登录" class="headerlink" title="设置我们mysql可以在任何ip下账号密码登录"></a>设置我们mysql可以在任何ip下账号密码登录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;我们自己msql密码&apos; WITH GRANT OPTION;</div></pre></td></tr></table></figure>
-<h4 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
-<h4 id="在Mac上的「Sequel-pro」测试一下"><a href="#在Mac上的「Sequel-pro」测试一下" class="headerlink" title="在Mac上的「Sequel pro」测试一下"></a>在Mac上的「Sequel pro」测试一下</h4><p><img src="http://ov0vwamhh.bkt.clouddn.com/2017-12-06-Jietu20171206-195558.jpg" alt=""><br><img src="http://ov0vwamhh.bkt.clouddn.com/2017-12-06-Jietu20171206-195350.jpg" alt=""></p>
-<p>阿西吧!终于连接上了,有没有,好激动有没有</p>
-<h2 id="如何将本地文件上传到云服务器呢"><a href="#如何将本地文件上传到云服务器呢" class="headerlink" title="如何将本地文件上传到云服务器呢?"></a>如何将本地文件上传到云服务器呢?</h2><h3 id="移动到本地文件目录下"><a href="#移动到本地文件目录下" class="headerlink" title="移动到本地文件目录下"></a>移动到本地文件目录下</h3><p>cd file</p>
-<p>scp index.css root@云服务器公网IP地址:服务器文件目录</p>
-<p>回车输入密码就可以上传了</p>
-<h3 id="移动整个文件目录到云服务器指定目录"><a href="#移动整个文件目录到云服务器指定目录" class="headerlink" title="移动整个文件目录到云服务器指定目录"></a>移动整个文件目录到云服务器指定目录</h3><p>scp -r images root@云服务器公网IP地址:服务器文件目录</p>
-<h3 id="移动多个文件到云服务器指定目录"><a href="#移动多个文件到云服务器指定目录" class="headerlink" title="移动多个文件到云服务器指定目录"></a>移动多个文件到云服务器指定目录</h3><p>scp index.html index.css project1.html project2.html root@139.196.40.14:服务器文件目录<br>多个文件名之间用空格分开。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1957,7 +1928,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
