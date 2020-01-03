@@ -316,7 +316,7 @@
 <h3 id="弧度"><a href="#弧度" class="headerlink" title="弧度"></a>弧度</h3><blockquote>
 <p>两条射线从圆心向圆周射出，形成一个夹角和夹角正对的一段弧。当这段==弧长正好等于圆的半径==时，两条射线的夹角大小为==1弧度==.</p>
 </blockquote>
-<p><img src="/images/20161205135404825.jpg" alt=""> &lt;&lt;&lt;—&gt;&gt;&gt; <img src="/images/20161205135421657.jpg" alt=""></p>
+<p><img src="/images/2020/01/03/20161205135404825.jpg" alt=""> &lt;&lt;&lt;—&gt;&gt;&gt; <img src="/images/2020/01/03/20161205135421657.jpg" alt=""></p>
 <h2 id="角度和弧度的换算"><a href="#角度和弧度的换算" class="headerlink" title="角度和弧度的换算"></a>角度和弧度的换算</h2><blockquote>
 <p>圆一周对应的角度为360度(角度)，对应的弧度为2π弧度。<br>故得等价关系:==360(角度) = 2π(弧度) ==&gt; 180(角度) = π(弧度)==</p>
 </blockquote>
@@ -327,7 +327,7 @@
 <h2 id="Android手机的角度和弧度"><a href="#Android手机的角度和弧度" class="headerlink" title="Android手机的角度和弧度"></a>Android手机的角度和弧度</h2><blockquote>
 <p>在常见的==数学坐标系==中角度增大方向为==逆时针==，<br>在默认的==屏幕坐标系==中角度增大方向为==顺时针==。</p>
 </blockquote>
-<p><img src="/images/20161205140512286.jpg" alt="Android手机角度增大方向"></p>
+<p><img src="/images/2020/01/03/20161205140512286.jpg" alt="Android手机角度增大方向"></p>
 <p>下一篇系列文章 <a href="https://yukuoyuan.github.io/2020/01/02/Android%E8%87%AA%E5%AE%9A%E4%B9%89View(%E4%B8%80" target="_blank" rel="external">Android自定义View(三)-</a>-%E5%9D%90%E6%A0%87%E7%B3%BB/)</p>
 
           
@@ -450,13 +450,13 @@
           
             <h2 id="屏幕坐标系和数学中的坐标系的区别"><a href="#屏幕坐标系和数学中的坐标系的区别" class="headerlink" title="屏幕坐标系和数学中的坐标系的区别"></a>屏幕坐标系和数学中的坐标系的区别</h2><p>由于Android定义屏幕==左上角为坐标原点== , ==向右为x轴增大方向== , ==向下为y轴增大方向== , 所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的.</p>
 <p>详情如下图：</p>
-<p><img src="/images/20161202150247504.jpg" alt="Android屏幕的坐标系"> &lt;&lt;&lt;&lt;—-&gt;&gt;&gt;&gt; <img src="/images/20161202150325102.jpg" alt="数学坐标的坐标系"></p>
-<h2 id="实际手机屏幕的坐标-黄色区域为手机屏幕"><a href="#实际手机屏幕的坐标-黄色区域为手机屏幕" class="headerlink" title="实际手机屏幕的坐标(黄色区域为手机屏幕)"></a>实际手机屏幕的坐标(黄色区域为手机屏幕)</h2><p><img src="/images/20161202151004546.jpg" alt="实际屏幕的坐标"></p>
+<p><img src="/images/2020/01/02/20161202150247504.jpg" alt="Android屏幕的坐标系"> &lt;&lt;&lt;&lt;—-&gt;&gt;&gt;&gt; <img src="/images/2020/01/02/20161202150325102.jpg" alt="数学坐标的坐标系"></p>
+<h2 id="实际手机屏幕的坐标-黄色区域为手机屏幕"><a href="#实际手机屏幕的坐标-黄色区域为手机屏幕" class="headerlink" title="实际手机屏幕的坐标(黄色区域为手机屏幕)"></a>实际手机屏幕的坐标(黄色区域为手机屏幕)</h2><p><img src="/images/2020/01/02/20161202151004546.jpg" alt="实际屏幕的坐标"></p>
 <h2 id="View-控件-在屏幕中坐标的获取"><a href="#View-控件-在屏幕中坐标的获取" class="headerlink" title="View(控件)在屏幕中坐标的获取"></a>View(控件)在屏幕中坐标的获取</h2><h3 id="对于屏幕而言的坐标获取"><a href="#对于屏幕而言的坐标获取" class="headerlink" title="对于屏幕而言的坐标获取"></a>对于屏幕而言的坐标获取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">int[] location = new int[2];</div><div class="line">view.getLocationInWindow(location); //获取在当前窗口内的绝对坐标</div><div class="line">view.getLocationOnScreen(location); //获取在当前屏幕内的绝对坐标</div><div class="line">location[0]; // 该View位于屏幕的x值</div><div class="line">location[1]; // 该View位于屏幕的y值</div></pre></td></tr></table></figure>
 <h3 id="对于父控件的坐标获取"><a href="#对于父控件的坐标获取" class="headerlink" title="对于父控件的坐标获取"></a>对于父控件的坐标获取</h3><p>详情如下图所示:</p>
-<p><img src="/images/20161202151809952.jpg" alt="view相对于父布局"></p>
+<p><img src="/images/2020/01/02/20161202151809952.jpg" alt="view相对于父布局"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">getTop();       //获取子View左上角距父View顶部的距离</div><div class="line">getLeft();      //获取子View左上角距父View左侧的距离</div><div class="line">getBottom();    //获取子View右下角距父View顶部的距离</div><div class="line">getRight();     //获取子View右下角距父View左侧的距离</div></pre></td></tr></table></figure>
-<h3 id="在MotionEvent中-get-和-getRaw-方法的区别"><a href="#在MotionEvent中-get-和-getRaw-方法的区别" class="headerlink" title="在MotionEvent中 get 和 getRaw 方法的区别"></a>在MotionEvent中 get 和 getRaw 方法的区别</h3><p><img src="/images/20161202152103343.jpg" alt=""></p>
+<h3 id="在MotionEvent中-get-和-getRaw-方法的区别"><a href="#在MotionEvent中-get-和-getRaw-方法的区别" class="headerlink" title="在MotionEvent中 get 和 getRaw 方法的区别"></a>在MotionEvent中 get 和 getRaw 方法的区别</h3><p><img src="/images/2020/01/02/20161202152103343.jpg" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">event.getX();       //触摸点相对于其所在组件坐标系的坐标</div><div class="line">event.getY();</div><div class="line"></div><div class="line">event.getRawX();    //触摸点相对于屏幕默认坐标系的坐标</div><div class="line">event.getRawY();</div></pre></td></tr></table></figure>
 
           
